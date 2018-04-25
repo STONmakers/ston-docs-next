@@ -209,26 +209,36 @@ Dissolve          50                         텍스트 투명도
 Font
 ---------------------
 
-
-상업적으로 재배포가 가능한 폰트만을 기본폰트로 제공한다.
+폰트 라이선스 문제로 인해 아래 폰트들만을 기본 배포한다.
 
 ========================================================================== ======================================
-Font              License
+Font                                                                       License
 ========================================================================== ======================================
-`EB Garamond <https://fonts.google.com/specimen/EB+Garamond>`_             Open Font License
+`EB Garamond <https://fonts.google.com/specimen/EB+Garamond>`_               Open Font License
+`Lato <https://fonts.google.com/specimen/Lato>`_                             Open Font License
+`Montserrat <https://fonts.google.com/specimen/Montserrat>`_                 Open Font License
+`나눔고딕 <https://fonts.google.com/specimen/Nanum+Gothic>`_                  Open Font License
+`나눔명조 <https://fonts.google.com/specimen/Nanum+Myeongjo>`_                Open Font License
+`Open Sans <https://fonts.google.com/specimen/Open+Sans>`_                   Open Font License
+`Oswald <https://fonts.google.com/specimen/Oswald>`_                         Open Font License
+`Raleway <https://fonts.google.com/specimen/Raleway>`_                       Open Font License
+`Roboto <https://fonts.google.com/specimen/Roboto>`_                         Apache License, Version 2.0
+`서울한강 <http://www.seoul.go.kr/v2012/seoul/symbol/font.html>`_            영리/비영리무료
+`서울남산 <http://www.seoul.go.kr/v2012/seoul/symbol/font.html>`_            영리/비영리무료
+`Source Sans Pro <https://fonts.google.com/specimen/Source+Sans+Pro>`_       Open Font License
 ========================================================================== ======================================
 
-Lato
-Montserrat
-NanumGothic
-NanumMyeongjo
-OpenSans
-Oswald
-Raleway
-Roboto
-SeoulHangang
-SeoulNamsan
-SourceSansPro
+
+
+
+
+
+
+
+
+
+
+
 
 
 폰트를 다음 경로에 복사하여 추가가 가능하다. ::
