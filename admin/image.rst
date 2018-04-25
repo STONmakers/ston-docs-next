@@ -196,7 +196,7 @@ Format 변경
 ================ ===================== =================
 반전               invert                true 또는 false
 그레이 스케일        grayscale            true 또는 false
-대칭이동            flipflop             vertical
+대칭이동            flipflop             vertical 또는 horizontal
 밝기조절            bright                0 ~ 100
 회전               rotate                0 ~ 360 (도)
 세피아              sepia                 0 ~ 1
