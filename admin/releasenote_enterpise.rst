@@ -11,7 +11,7 @@ v18.x
 
 **기능개선/정책변경**
 
-- :ref:`media-dims` - Annotation 기능 추가
+- :ref:`media-dims` - :ref:`media-dims-annotation` 기능 추가
 
 
 .. note::
