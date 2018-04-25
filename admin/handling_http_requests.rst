@@ -374,7 +374,7 @@ If-Modified-Since 헤더 처리
    # server.xml - <Server><VHostDefault><Options>
    # vhosts.xml - <Vhosts><Vhost><Options>
 
-   <LastModifiedCheck>OFF</LastModifiedCheck>
+   <LastModifiedCheck>exact</LastModifiedCheck>
 
 -  ``<LastModifiedCheck>``
 

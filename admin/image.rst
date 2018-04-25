@@ -204,15 +204,32 @@ Dissolve          50                         텍스트 투명도
 - ``Gravity`` , ``Geometry`` , ``Dissolve`` 는 <합성>과 동일하다.
 
 
+.. _media-dims-annotation-font:
+
+Font
+---------------------
+
+
 상업적으로 재배포가 가능한 폰트만을 기본폰트로 제공한다.
 
-================= ======================================
+========================================================================== ======================================
 Font              License
-================= ======================================
-Roboto            Apache License, Version 2.0
-Nanum Gothic      Open Font License
-Open Sans         Apache License, Version 2.0
-================= ======================================
+========================================================================== ======================================
+`EB Garamond <https://fonts.google.com/specimen/EB+Garamond>`_             Open Font License
+========================================================================== ======================================
+
+Lato
+Montserrat
+NanumGothic
+NanumMyeongjo
+OpenSans
+Oswald
+Raleway
+Roboto
+SeoulHangang
+SeoulNamsan
+SourceSansPro
+
 
 폰트를 다음 경로에 복사하여 추가가 가능하다. ::
 
