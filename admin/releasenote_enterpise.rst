@@ -1,6 +1,6 @@
 .. _release_enterprise:
 
-Appendix E: 릴리스 노트  ``Enterprise``
+Appendix E: 릴리스 노트  ``[Enterprise]``
 ***********************
 
 v18.x
