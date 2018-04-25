@@ -10,12 +10,9 @@ v2.5.x
 2.5.14 (2018.4.26)
 ----------------------------
 
-handling_http_requests_header_if_range
-
-**기능개선/정책변경**
-
-- :ref:`origin-use-policy` - DNS에서 Resolving된 IP의 최대 사용시간을 설정한다.
-- :ref:`origin-use-policy` - DNS에서 Resolving된 IP의 최대 사용시간을 설정한다.
+-  클라이언트 요청 :ref:`_handling_http_requests_header_if_range` 헤더 지원 
+-  원본 요청 시 :ref:`_origin_header_if_range` 헤더 지원
+-  :ref:`_handling_http_requests_header_lastmodifiedcheck` 설정기능 추가
 
 
 2.5.13 (2018.3.27)

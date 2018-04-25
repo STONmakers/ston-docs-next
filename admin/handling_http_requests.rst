@@ -349,7 +349,7 @@ Server 헤더
 If-Range 헤더
 ---------------------
 
-클라이언트가 보내는 If-Range헤더를 인식하여 요청을 처리한다. ::
+클라이언트가 보내는 Range요청의 If-Range헤더를 인식하여 처리한다. ::
 
    # server.xml - <Server><VHostDefault><Options>
    # vhosts.xml - <Vhosts><Vhost><Options>
@@ -360,8 +360,27 @@ If-Range 헤더
 
    -  ``OFF (기본)`` If-Range헤더를 무시한다.
 
-   -  ``OFF`` If-Range헤더를 인식하여 요청을 처리한다.
+   -  ``OFF`` If-Range헤더를 인식하여 Range 요청을 처리한다. 값이 유효하다면 ``206 Partial Content`` 로 응답한다. 아니라면 ``200 OK`` 로 응답한다.
 
+
+
+.. _handling_http_requests_header_lastmodifiedcheck:
+
+If-Modified-Since 헤더 처리
+---------------------
+
+클라이언트가 보내는 요청의 If-Modified-Since 헤더 처리정책을 설정한다. ::
+
+   # server.xml - <Server><VHostDefault><Options>
+   # vhosts.xml - <Vhosts><Vhost><Options>
+
+   <LastModifiedCheck>OFF</LastModifiedCheck>
+
+-  ``<LastModifiedCheck>``
+
+   -  ``exact (기본)`` 요청 대상의 Last-Modified 시간과 일치하는 경우에만 ``304 Not Modified`` 로 응답한다. 
+
+   -  ``orlater`` 요청 대상의 Last-Modified 시간보다 일치하거나 큰 경우 ``304 Not Modified`` 응답한다.
 
 
 .. _handling_http_requests_modify_client:
