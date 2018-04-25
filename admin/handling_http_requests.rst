@@ -360,7 +360,7 @@ If-Range 헤더
 
    -  ``OFF (기본)`` If-Range헤더를 무시한다.
 
-   -  ``OFF`` If-Range헤더를 인식하여 Range 요청을 처리한다. 값이 유효하다면 ``206 Partial Content`` 로 응답한다. 아니라면 ``200 OK`` 로 응답한다.
+   -  ``ON`` If-Range헤더를 인식하여 Range 요청을 처리한다. 값이 유효하다면 ``206 Partial Content`` 로 응답한다. 아니라면 ``200 OK`` 로 응답한다.
 
 
 
