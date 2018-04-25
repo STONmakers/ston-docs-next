@@ -6,6 +6,18 @@ Appendix D: 릴리스 노트  ``[CDN]``
 v2.5.x
 ====================================
 
+
+2.5.14 (2018.4.26)
+----------------------------
+
+handling_http_requests_header_if_range
+
+**기능개선/정책변경**
+
+- :ref:`origin-use-policy` - DNS에서 Resolving된 IP의 최대 사용시간을 설정한다.
+- :ref:`origin-use-policy` - DNS에서 Resolving된 IP의 최대 사용시간을 설정한다.
+
+
 2.5.13 (2018.3.27)
 ----------------------------
 

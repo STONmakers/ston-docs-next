@@ -338,9 +338,30 @@ Server 헤더
 
 -  ``<ServerHeader>``
 
-   -  ``ON (기본)`` 원본서버의 Server헤더를 명시한다. ::
+   -  ``ON (기본)`` 원본서버의 Server헤더를 명시한다.
 
    -  ``OFF``  Server헤더를 생략한다.
+
+
+
+.. _handling_http_requests_header_if_range:
+
+If-Range 헤더
+---------------------
+
+클라이언트가 보내는 If-Range헤더를 인식하여 요청을 처리한다. ::
+
+   # server.xml - <Server><VHostDefault><Options>
+   # vhosts.xml - <Vhosts><Vhost><Options>
+
+   <IfRange>OFF</IfRange>
+
+-  ``<IfRange>``
+
+   -  ``OFF (기본)`` If-Range헤더를 무시한다.
+
+   -  ``OFF`` If-Range헤더를 인식하여 요청을 처리한다.
+
 
 
 .. _handling_http_requests_modify_client:
