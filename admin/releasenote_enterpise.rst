@@ -20,7 +20,7 @@ v18.x
 
 **버그수정**
 
- -  If-Modified-Since 헤더 처리 기능을 "orlater" 로 설정 할 경우 최초 캐싱 시 304 응답을 할 수 있는 문제 수정
+ -  :ref:`handling_http_requests_header_lastmodifiedcheck` - ``orlater`` 로 설정 할 경우 최초 캐싱 시 304 응답을 할 수 있는 문제 수정
 
 
 18.05.0 (2018.5.15)
