@@ -311,6 +311,12 @@ Format 변경
    http://image.example.com/img.jpg/dims/format/png/
 
 
+.. note::
+
+   ``[Enterprise]`` v18.06.0 부터 WebP를 지원한다.
+
+
+
 품질 변경
 ====================================
 
