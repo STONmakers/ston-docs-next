@@ -56,6 +56,9 @@ DIMS(Dynamic Image Management System)는 원본이미지를 다양한 형태로 
    :maxdepth: 2
 
 
+
+.. _media-dims-optimize:
+
 최적화
 ====================================
 
@@ -387,6 +390,7 @@ Format 변경
     http://image.example.com/img.jpg/dims/composite/water1/
 
 
+.. _media-dims-byoriginal:
 
 원본이미지 조건판단
 ====================================
