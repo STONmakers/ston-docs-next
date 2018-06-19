@@ -12,7 +12,6 @@ v2.5.x
 
 **기능개선/정책변경**
 
-- :ref:`media-dims` - WebP 포맷 지원
 - 바이패스 응답에도 :ref:`handling_http_requests_basic_via` 추가하도록 정책변경
 
 
