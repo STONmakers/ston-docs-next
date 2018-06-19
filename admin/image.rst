@@ -305,7 +305,7 @@ Format 변경
 ====================================
 
 이미지 포맷을 변경한다.
-지원되는 포맷은 "png", "jpg", "gif" 이다.
+지원되는 포맷은 ``png`` , ``jpg`` , ``gif`` , ``webp`` 이다.
 다음은 JPG를 PNG로 변환하는 예제다. ::
 
    http://image.example.com/img.jpg/dims/format/png/
