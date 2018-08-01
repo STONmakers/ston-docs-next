@@ -509,7 +509,7 @@ Value가 입력되지 않은 경우 빈 값("")이 입력된다.
    $URL[*.html], $RES[Access-Allow-Control-Origin: $REQ.Origin], Set
 
    # 클라이언트가 보낸 요청의 여러 헤더 값을 응답의 X-Cookie 헤더 값으로 설정한다.
-   $URL[*.json], $RES[X-Cookie: $REQ[User-Agent, Host]], Set
+   $URL[*.json], $RES[X-Cookie: $REQ.[User-Agent, Host]], Set
 
 
 .. note::
