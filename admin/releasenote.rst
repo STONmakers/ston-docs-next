@@ -14,7 +14,7 @@ v2.6.x
 **기능개선/정책변경**
 
 - HTTPS - 성능개선 및 ECDSA 인증서 지원
-- Expires 헤더기능 – 원본 Max-Age 값을 사용하는 기능 추가
+- :ref:`handling_http_requests_cache_control_expires` – 원본 Max-Age 값을 사용하는 기능 추가
 
 
 v2.5.x
