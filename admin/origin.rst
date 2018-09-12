@@ -66,7 +66,7 @@ Caching과정 중 원본서버에 장애가 발생하면 자동배제한다.
 
 
 
-[![Q&A 원본서버 장애](http://img.youtube.com/vi/TfhdKB_ncTc/0.jpg)](https:www.youtube.com/watch?v=RJcYwqAqOrY?t=0s)
+[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw?t=0s) 
 
 
 .. _origin-health-checker:
