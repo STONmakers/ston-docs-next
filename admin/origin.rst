@@ -66,9 +66,6 @@ Caching과정 중 원본서버에 장애가 발생하면 자동배제한다.
 
 
 
-[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw "Video Label") 
-
-
 .. _origin-health-checker:
 
 Health-Checker
