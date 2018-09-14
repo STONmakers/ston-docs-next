@@ -5,8 +5,11 @@
 
 .. note::
 
+   - `[30초 Q&A] STON Edge Server Q&A '원본서버' <https://www.youtube.com/watch?v=S2pxrv9gUy8&index=8&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
    - `[30초 Q&A] STON Edge Server Q&A '원본서버 연결' <https://www.youtube.com/watch?v=RJcYwqAqOrY&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
-
+   - `[30초 Q&A] STON Edge Server Q&A '원본서버 장애' <https://www.youtube.com/watch?v=TfhdKB_ncTc&index=2&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
+   - `[30초 Q&A] STON Edge Server Q&A '원본서버 복구' <https://www.youtube.com/watch?v=iDekbXavdxQ&index=4&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
+   - `[30초 Q&A] STON Edge Server Q&A '원본 부하분산' <https://www.youtube.com/watch?v=RqzH92YC9us&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w-&index=3>`_
 
 이 장에서는 STON과 원본서버의 관계에 대해 설명한다.
 원본서버란 일반적으로 HTTP 규격을 준수하는 웹서버를 의미한다.
@@ -27,6 +30,11 @@
 
 장애감지와 복구
 ====================================
+
+.. note::
+
+   - `[30초 Q&A] STON Edge Server Q&A '원본서버 장애' <https://www.youtube.com/watch?v=TfhdKB_ncTc&index=2&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
+   - `[30초 Q&A] STON Edge Server Q&A '원본서버 복구' <https://www.youtube.com/watch?v=iDekbXavdxQ&index=4&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w->`_
 
 Caching과정 중 원본서버에 장애가 발생하면 자동배제한다.
 다시 안정화됐다고 판단하면 서비스에 투입한다. ::
@@ -282,6 +290,11 @@ API를 통해 가상호스트의 원본서버 배제/복구를 초기화한다.
 
 원본 선택
 ====================================
+
+.. note::
+
+   - `[30초 Q&A] STON Edge Server Q&A '원본 부하분산' <https://www.youtube.com/watch?v=RqzH92YC9us&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w-&index=3>`_
+
 
 원본서버 주소가 멀티(2개 이상)로 구성되어 있을 때 원본서버 선택정책을 설정한다. ::
 
