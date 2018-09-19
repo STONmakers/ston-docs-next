@@ -1,7 +1,11 @@
-﻿.. _bypass:
+.. _bypass:
 
 8장. 바이패스
 ******************
+
+.. note::
+
+   - `[동영상 강좌] 해보자! STON Edge Server - Chapter 9. 바이패스 <https://www.youtube.com/watch?v=kuM02O46eqQ&list=PLqvIfHb2IlKeZ-Eym_UPsp6hbpeF-a2gE&index=9>`_
 
 이 장에서는 클라이언트 요청처리를 원본서버에게 위임하는 바이패스에 대해 설명한다.
 바이패스는 조건과 동작으로 구분된다.
