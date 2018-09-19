@@ -12,7 +12,7 @@
    - `[Q&A] STON Edge Server의 원본 부하분산은 어떻게 동작하나요? <https://www.youtube.com/watch?v=RqzH92YC9us&list=PLqvIfHb2IlKc0M8JZNIjus9BseHXuu3w-&index=3>`_
 
 
-[![원본서버에 장애가 발생하면 STON Edge Server는 어떻게 대처하나요?](http://img.youtube.com/vi/TfhdKB_ncTc/0.jpg)](https://youtu.be/RJcYwqAqOrY)
+[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw?t=0s)
 
 
 이 장에서는 STON과 원본서버의 관계에 대해 설명한다.
