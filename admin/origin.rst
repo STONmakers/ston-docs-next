@@ -15,6 +15,12 @@
 ![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)
 
 
+   .. figure:: img/http://img.youtube.com/vi/TfhdKB_ncTc/0.jpg
+      :align: center
+
+      mod_h.264_streaming모듈은 항상 원본을 변조한다.
+
+
 이 장에서는 STON과 원본서버의 관계에 대해 설명한다.
 원본서버란 일반적으로 HTTP 규격을 준수하는 웹서버를 의미한다.
 관리자라면 원본을 보호하기 위해 이번 장의 모든 내용을 숙지할 필요가 있다.
