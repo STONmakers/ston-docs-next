@@ -1,7 +1,11 @@
-﻿.. _caching-purge:
+.. _caching-purge:
 
 5장. Caching 무효화
 ******************
+
+.. note::
+
+   - `[동영상 강좌] 해보자! STON Edge Server - Chapter 8. 컨텐츠 제어 <https://www.youtube.com/watch?v=bo-AItkIk-w&index=8&list=PLqvIfHb2IlKeZ-Eym_UPsp6hbpeF-a2gE>`_
 
 이 장에서는 Caching된 콘텐츠를 무효화하는 방법에 대해 설명한다.
 업계용어로 Purge로 통칭하지만 다양한 상황과 환경으로 인해 세분화된 API가 필요하다.
