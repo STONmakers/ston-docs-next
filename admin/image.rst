@@ -4,7 +4,8 @@
 ******************
 
 이 장에서는 이미지를 전송시점에 on-the-fly로 변환/전송하는 이미지 툴(Tool)에 대해 다룬다.
-이미지 툴은 DIMS(Dynamic Image Management System)를 포함하여 원본이미지를 다양한 형태로 가공하는 기능이다.
+이미지 툴은 DIMS(Dynamic Image Management System)를 포함하여 원본이미지를 다양한 형태로 가공하는 기능이다. 
+이미지 가공에 대한 기록은 :ref:`admin-log-image` 에 기록된다.
 
 
 .. note::
