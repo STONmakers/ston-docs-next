@@ -13,7 +13,7 @@ v19.x
 
  - ImageTool(DIMS) - Format 변환 시 기본 Quality 설정 기능
  - ImageTool(DIMS) - 최대 Quality 설정 기능
- - 로그 - 이미지 변환 로그 추가
+ - :ref:`admin-log-image` 추가
  - :ref:`handling_http_requests_modify_client` - 클라이언트 요청 헤더의 값을 원본 요청 헤더에 추가하는 기능
 
 **버그수정**
