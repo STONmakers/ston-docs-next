@@ -341,6 +341,22 @@ Format 변경
    http://image.example.com/img.jpg/dims/quality/25/
 
 
+.. note::
+
+   ``Enterprise`` 최대 Quality를 설정할 수 있다. ::
+
+      # server.xml - <Server><VHostDefault><Options>
+      # vhosts.xml - <Vhosts><Vhost><Options>
+
+      <Dims>
+         <MaxQuality>100</MaxQuality>
+      </Dims>
+
+   
+   -  ``MaxQuality (기본: 100)`` 최대 이미지 품질(1~100).
+
+
+
 이펙트
 ====================================
 
