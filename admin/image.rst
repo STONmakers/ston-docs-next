@@ -302,7 +302,13 @@ Format 변경
 ====================================
 
 이미지 포맷을 변경한다.
-지원되는 포맷은 ``png`` , ``jpg`` , ``gif`` , ``webp`` 이다.
+``png`` , ``jpg`` , ``gif`` 를 지원한다.
+
+.. note::
+
+   ``Enterprise`` v18.06.0 부터 WebP를 지원한다.
+
+
 다음은 JPG를 PNG로 변환하는 예제다. ::
 
    http://image.example.com/img.jpg/dims/format/png/
@@ -310,7 +316,17 @@ Format 변경
 
 .. note::
 
-   ``[Enterprise]`` v18.06.0 부터 WebP를 지원한다.
+   ``Enterprise`` 변경된 Format의 기본 Quality를 설정할 수 있다. ::
+
+      # server.xml - <Server><VHostDefault><Options>
+      # vhosts.xml - <Vhosts><Vhost><Options>
+
+      <Dims>
+         <FormatQuality>100</FormatQuality>
+      </Dims>
+
+   
+   -  ``FormatQuality (기본: 100)`` 변경된 Format의 기본 Quality (1~100).
 
 
 
