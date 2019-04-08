@@ -1,6 +1,6 @@
 .. _release:
 
-Appendix D: 릴리스 노트  ``[CDN]``
+Appendix E: 릴리스 노트  ``[CDN]``
 ***********************
 
 v2.6.x
