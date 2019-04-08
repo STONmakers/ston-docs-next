@@ -85,7 +85,7 @@ N개의 요청이 집계될 때마다 랭킹을 제공한다. ``-H`` 옵션으�
 QueryString 구분
 ---------------------
 
-기본으로 QueryString은 무시된다. ``-q`` 옵션으로 구분하도록 변경한다.. ::
+기본으로 QueryString은 무시된다. ``-q`` 옵션으로 구분하도록 변경한다. ::
 
    /usr/local/ston/stontop -f /ston_log/test.winesoft.co.kr/access.log -q
 
@@ -118,7 +118,7 @@ QueryString 구분
 대소문자 구분
 ---------------------
 
-기본으로 URL 대소문자는 구분된다. ``-l`` 옵션으로 구분하지 않도록 변경한다.. ::
+기본으로 URL 대소문자는 구분된다. ``-l`` 옵션으로 구분하지 않도록 변경한다. ::
 
    # /IMG/1.jpg 와 /img/1.jpg 를 구분하지 않도록 한다.
    /usr/local/ston/stontop -f /ston_log/test.winesoft.co.kr/access.log -l
@@ -132,7 +132,7 @@ QueryString 구분
 ---------------------
 
 기본으로 STON의 access.log를 대상으로 분석한다. 이 밖에 STON의 origin.log와 Apache의 access.log를 지원한다. 
-``-L`` 옵션으로 구분하지 않도록 변경한다.. ::
+``-L`` 옵션으로 ``origin`` 또는 ``apache`` 로 설정한다. ::
 
    # STON의 origin.log 모니터링
    /usr/local/ston/stontop -f /ston_log/test.winesoft.co.kr/origin.log -L origin
@@ -159,7 +159,7 @@ QueryString 구분
 화면갱신 주기
 ---------------------
 
-기본으로 5초마다 화면을 갱신한다. ``-d`` 옵션으로 갱신주기(초)를 변경한다.. ::
+기본으로 5초마다 화면을 갱신한다. ``-d`` 옵션으로 갱신주기(초)를 변경한다. ::
 
    # 1초마다 화면이 갱신된다.
    /usr/local/ston/stontop -f /ston_log/test.winesoft.co.kr/access.log -d 1
@@ -297,7 +297,7 @@ s         정렬 옵션 ON/OFF
 .. figure:: img/stontop_arrange_t.png
    :align: center
 
-   ``t`` 요청 수 정렬
+   ``t`` 평균 응답시간 정렬
 
 
 
@@ -329,19 +329,19 @@ s         정렬 옵션 ON/OFF
 .. figure:: img/stontop_arrange_res_3.png
    :align: center
 
-   ``3`` 2xx 응답기준 정렬
+   ``3`` 3xx 응답기준 정렬
 
 
 .. figure:: img/stontop_arrange_res_4.png
    :align: center
 
-   ``4`` 2xx 응답기준 정렬
+   ``4`` 4xx 응답기준 정렬
 
 
 .. figure:: img/stontop_arrange_res_5.png
    :align: center
 
-   ``5`` 2xx 응답기준 정렬
+   ``5`` 5xx 응답기준 정렬
 
 
 
