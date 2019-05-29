@@ -70,7 +70,7 @@ WM접근 주소는 http://192.168.0.100:8500이 된다.
 
 .. note::
 
-   같은 방식으로 매니저 포트( :ref:`env-host` )에 대한 접근설정도 가능하다.
+   `실시간 모니터링 <http://webhard.winesoft.co.kr/stonmonitor/stonmonitor.7z>`_ 접근도 같은 방식으로 매니저 포트(기본 10040, :ref:`env-host` ) 접근이 가능하다.    
 
 
 
