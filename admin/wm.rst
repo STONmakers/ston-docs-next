@@ -39,6 +39,40 @@ WM접근 주소는 http://192.168.0.100:8500이 된다.
    WM 접속초기화면
 
 
+방화벽 등 포트 접근이 불가한 경우
+---------------------
+
+내부 정책으로 80/443등 서비스 포트만 허용된 경우 WM 접근이 불가능하다. 
+이런 경우 다음과 같이 STON을 WM 경유전용 가상호스트를 추가하면 접근이 가능하다. ::
+
+   # vhosts.xml
+
+   <Vhosts>
+
+      ... (생략) ...
+
+      <Vhost Name="wm.example.com" Status="Active">
+         <Listen>*:80</Listen>
+         <Origin>
+            <Address>127.0.0.1:8500</Address>
+         </Origin>
+         <Options>
+            <BypassPostRequest OriginAffinity="ON" Private="OFF">ON</BypassPostRequest>
+            <BypassGetRequest OriginAffinity="ON" Private="OFF">ON</BypassGetRequest>
+            <BypassPutRequest OriginAffinity="ON" Private="OFF">ON</BypassPutRequest>
+         </Options>      
+      </Vhost>
+   
+   </Vhosts>
+
+wm.exmaple.com을 :ref:`env-vhost-defaultvhost` 로 설정하거나 클라이언트에서 hosts파일을 수정하여 접속한다.
+
+.. note::
+
+   같은 방식으로 매니저 포트에 대한 접근설정도 가능하다.
+
+
+
 계정
 ====================================
 
