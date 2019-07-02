@@ -11,9 +11,9 @@ v19.x
 
 **기능개선/정책변경**
 
- - RRD 통계 수집 설정 지원
- - Custom TTL – 원본 응답 조건 추가
- - 원본 서버를 배제 하지 않는 기능 추가
+ - :ref:`adv_topics_rrd_inactive` - 기능 추가
+ - :ref:`caching-policy-customttl` – 원본 응답 조건 추가
+ - :ref:`origin_exclusion_and_recovery` - 원본 서버를 배제 하지 않는 기능 추가
  - ImageTool(DIMS) - :ref:`media-dims-autorotate` 기능 추가
 
 

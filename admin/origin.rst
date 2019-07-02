@@ -59,7 +59,7 @@ Caching과정 중 원본서버에 장애가 발생하면 자동배제한다.
 
    .. note::
 
-      CDN v2.6.13, Enterprise v19.07.0 부터는 ``<Exclusion>`` 설정이 0이라면 원본서버를 배제하지 않는다.
+      ``CDN v2.6.13`` , ``Enterprise v19.07.0`` 부터는 ``<Exclusion>`` 설정이 0이라면 원본서버를 배제하지 않는다.
 
 
 -  ``<Recovery> (기본: 5회)``
