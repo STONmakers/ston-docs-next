@@ -14,6 +14,7 @@ v2.6.x
  - :ref:`adv_topics_rrd_inactive` - 기능 추가
  - :ref:`caching-policy-customttl` – 원본 응답 조건 추가
  - :ref:`origin_exclusion_and_recovery` - 원본 서버를 배제 하지 않는 기능 추가
+ - 1분 평균 통계 API 지원
 
 **버그수정**
 
