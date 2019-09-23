@@ -672,7 +672,7 @@ If-Range 헤더에 의해 원본서버가 ``206 Partial Content`` 가 아닌 ``2
 AWS S3 인증
 ====================================
 
-AWS S3를 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/sig-v4-authenticating-requests.html>`_ 를 지원한다. ::
+AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/sig-v4-authenticating-requests.html>`_ 를 지원한다. ::
 
    # server.xml - <Server><VHostDefault><OriginOptions>
    # vhosts.xml - <Vhosts><Vhost><OriginOptions>
@@ -684,10 +684,10 @@ AWS S3를 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <ht
    </Authorization>
 
 ``<Authorization>`` 의 ``Status`` 속성이 ``Active`` 인 경우에 동작한다. 
-`Authenticating Requests (AWS Signature Version 4) <https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/sig-v4-authenticating-requests.html>`_ 동작에 필요한 하위 설정 ( ``<AccessKeyID>`` , ``<SecretAccessKey>`` , ``<Region>`` )을 입력하여 동작시킨다. 
-만약 모든 가상호스트의 원본서버가 AWS S3에 존재한다면 ``<VHostDefault>`` 설정으로 구성하여 간단히 관리가 가능하다.
+`Authenticating Requests (AWS Signature Version 4) <https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/API/sig-v4-authenticating-requests.html>`_ 동작에 필요한 세부 설정 ``<AccessKeyID>`` , ``<SecretAccessKey>`` , ``<Region>`` 을 구성한다.
+만약 모든 가상호스트의 원본서버가 AWS S3에 존재한다면 기본 가상호스트 ``<VHostDefault>`` 로도 설정이 가능하다.
 
 
 .. note::
 
-   GET 메소드만을 지원한다. POST나 PUT등 쓰기 권한의 메소드를 지원할 경우 자칫 악의적으로 사용될 수 있기 때문이다.
+   읽기 권한인 GET 메소드만을 지원한다. 쓰기(POST, PUT, FETCH)는 캐시서버의 목적에 부합하지 않는다.
