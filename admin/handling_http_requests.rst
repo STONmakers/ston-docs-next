@@ -751,10 +751,11 @@ HTTP/2
 -  ``MaxConcurrentStream`` 단일 HTTP2 세션으로 진행가능한 HTTP Stream의 최대 개수
 -  ``ClientKeepAlive`` HTTP 세션의 Keep-Alive 시간
 
+
 .. note::
 
-   HTTP/2 통계 수집시점은 Payload가 수신되거나 전송할 때 입니다. 따라서 아래의 이유로 실제 전송량과 약간의 오차가 발생할 수 있습니다.
+   HTTP/2가 활성화되면 통계 수집시점이 Payload가 송/수신 되는 어플리케이션으로 변경되며 통계집계에서 약간의 오차가 발생할 수 있다.
 
    -  ``HTTP/2`` HPACK과 멀티 Stream 처리 방식
-   -  ``TLS`` 암/복호화
+   -  ``TLS`` 에서의 멀티 프로토콜( ``HTTP/1.1``, ``HTTP/2`` ) 수용
 
