@@ -11,7 +11,7 @@ v2.7.x
 
 **기능개선/정책변경**
 
- - 바이패스 -  Sticky Session 동작 설정 추가
+ - 바이패스/ :ref:`bypass-affinity-sticky` - Sticky 속성 추가
 
 
 **버그수정**
