@@ -568,7 +568,7 @@ Animated GIF에 대해서도 모든 DIMS변환이 동일하게 적용된다.
 
 .. note::
 
-   기존 이미지 주소 뒤에 이미지툴 함수를 붙이는 방식은 :ref:`env-vhost-activeorigin` 를 사용하기 때문에 별도의 주소 입력이 불필요하다.
+   ``Keyword`` 방식은 :ref:`env-vhost-activeorigin` 설정을 사용하기 때문에 별도의 주소 입력이 불필요하다.
    
 외부이미지 연결에는 ``Query`` 설정이 키로 사용된다. ::
 
