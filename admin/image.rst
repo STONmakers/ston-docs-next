@@ -107,39 +107,6 @@ JPEG, JPEG-2000, Loseless-JPEG 이미지만 지원이 가능하다.
       http://image.example.com/img.jpg/dims/strip/true
 
 
-.. _media-dims-external-image:
-
-외부이미지 연결 ``[Enterprise]``
-====================================
-
-원본 이미지가 불특정 다수의 외부 서비스에 존재한다면 다음 주소 체계를 사용할 수 있다. ::
-
-   http://{서비스도메인}/{이미지툴-함수}?sref={외부이미지 URL}
-
-이는 이미지 가공 게이트웨이를 만들기에 유용하다. ::
-
-   http://image.example.com/optimize?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
-   http://image.example.com/resize/100x100/grayscale/true?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
-
-외부 이미지 URL은 반드시 URL 인코딩되어야 한다.
-
-.. note::
-
-   기존 이미지 주소 뒤에 이미지툴 함수를 붙이는 방식은 :ref:`env-vhost-activeorigin` 를 사용하기 때문에 별도의 주소 입력이 불필요하다.
-   
-외부이미지 연결에는 ``Keyword`` 는 사용되지 않는다. ::
-
-   # server.xml - <Server><VHostDefault><Options>
-   # vhosts.xml - <Vhosts><Vhost><Options>
-
-   <Dims Status="Active" Keyword="dims" Query="sref">
-      ...
-   </Dims>
-
-
--  ``Query (기본: sref)`` 외부이미지 URL을 입력받을 쿼리스트링 키. http/s를 지원하며 프로토콜이 형식이 올바르지 않을 경우 400 bad request로 응답한다.
-
-
 
 .. _media-dims-annotation:
 
@@ -579,6 +546,41 @@ Animated GIF에 대해서도 모든 DIMS변환이 동일하게 적용된다.
       
       http://image.example.com/img.jpg/dims/limit/3
       http://image.example.com/img.jpg/dims/limit/3/resize/200x200
+
+
+
+
+.. _media-dims-external-image:
+
+외부이미지 연결 ``[Enterprise]``
+====================================
+
+원본 이미지가 불특정 다수의 외부 서비스에 존재한다면 다음 주소 체계를 사용하는 것이 적합하다. ::
+
+   http://{서비스도메인}/{이미지툴-함수}?sref={외부이미지 URL}
+
+오픈마켓처럼 보장할 수 없는 외부 셀러들의 이미지를 처리하기에 적합하다. ::
+
+   http://image.example.com/optimize?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
+   http://image.example.com/resize/100x100/grayscale/true?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
+
+쿼리스트링의 URL은 반드시 `URL 인코딩<https://www.urlencoder.org/>`_ 되어야 한다.
+
+.. note::
+
+   기존 이미지 주소 뒤에 이미지툴 함수를 붙이는 방식은 :ref:`env-vhost-activeorigin` 를 사용하기 때문에 별도의 주소 입력이 불필요하다.
+   
+외부이미지 연결에는 ``Query`` 설정이 키로 사용된다. ::
+
+   # server.xml - <Server><VHostDefault><Options>
+   # vhosts.xml - <Vhosts><Vhost><Options>
+
+   <Dims Status="Active" Keyword="dims" Query="sref">
+      ...
+   </Dims>
+
+
+-  ``Query (기본: sref)`` 외부이미지 URL을 입력받을 쿼리스트링 키. http/s를 지원하며 프로토콜이 형식이 올바르지 않을 경우 400 bad request로 응답한다.
 
 
 
