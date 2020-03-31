@@ -121,6 +121,7 @@ JPEG, JPEG-2000, Loseless-JPEG 이미지만 지원이 가능하다.
    http://image.example.com/optimize?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
    http://image.example.com/resize/100x100/grayscale/true?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
 
+외부 이미지 URL은 반드시 URL 인코딩되어야 한다.
 
 .. note::
 
