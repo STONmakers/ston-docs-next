@@ -559,12 +559,12 @@ Animated GIF에 대해서도 모든 DIMS변환이 동일하게 적용된다.
 
    http://{서비스도메인}/{이미지툴-함수}?sref={외부이미지 URL}
 
-오픈마켓처럼 보장할 수 없는 외부 셀러들의 이미지를 처리하기에 적합하다. ::
+아래와 같이 ``Keyword`` 없이 원본이미지 URL이 쿼리스트링으로 입력된다. ::
 
    http://image.example.com/optimize?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
    http://image.example.com/resize/100x100/grayscale/true?sref=https%3A%2F%2Fwww.google.com%2Flogo.jpg
 
-쿼리스트링의 URL은 반드시 `URL 인코딩<https://www.urlencoder.org/>`_ 되어야 한다.
+쿼리스트링으로 입력되는 URL은 반드시 `URL 인코딩 <https://www.urlencoder.org/>`_ 되어야 한다.
 
 .. note::
 
@@ -580,7 +580,7 @@ Animated GIF에 대해서도 모든 DIMS변환이 동일하게 적용된다.
    </Dims>
 
 
--  ``Query (기본: sref)`` 외부이미지 URL을 입력받을 쿼리스트링 키. http/s를 지원하며 프로토콜이 형식이 올바르지 않을 경우 400 bad request로 응답한다.
+-  ``Query (기본: sref)`` 외부이미지 URL을 입력받을 쿼리스트링 키. http/s를 지원하며 URL형식이 올바르지 않을 경우 400 bad request로 응답한다.
 
 
 
