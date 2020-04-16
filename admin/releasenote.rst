@@ -9,12 +9,11 @@ v2.7.x
 2.7.4 (2020.4.21)
 ----------------------------
 
-:ref:`handling_http_requests_header_ifrange` 기능 추가
-
 **기능개선/정책변경**
 
  - :ref:`admin-log-originerror` - 원본서버 Port 필드 ``s-port`` 추가
  - 원본서버가 ``If-Range`` 에 대한 응답으로 200 OK를 줄 경우 파일을 갱신 하도록 정책 변경
+ - :ref:`handling_http_requests_header_if_range` -  클라이언트가 보낸 If-Range의 값이 더 최신이라면 캐싱 컨텐츠를 Purge 하는 속성 추가
 
 **버그수정**
 
