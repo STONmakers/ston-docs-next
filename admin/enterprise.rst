@@ -1,13 +1,106 @@
 .. _enterprise:
 
-21장. 엔터프라이즈 서비스
+21장. 계층 구조
 ****************************
 
-이 장에서는 엔터프라이즈 서비스 구성에서 대해 자세히 설명한다.
+이 장에서는 대규머 서비스에 적합한 2-계층(2-Tier) 구성에서 대해 자세히 설명한다. 
+대규모 서비스를 이해하기 위해서는  **HOT** & **COLD** 콘텐츠를 이해해야 한다.
+
+-  **HOT** - 자주 서비스되며 Peak 시점 트래픽의 대부분을 차지한다.
+-  **COLD** - 간헐적으로 서비스되지만 저장공간은 **HOT** 과 동일하게 차지한다. (흔히 Long-tail이라고 부른다.)
+
+대규모 E-Commerce나 동영상 서비스의 막대한 데이터 트래픽에는 **HOT** 과 **COLD** 가 혼재되어 있으며 이를 스토리지만으로 처리하는 것은 매우 어려운 문제이다.
+
+-  I/O 성능
+-  SPOP (Single Point Of Pain)
+-  비용
+-  관리
+
+캐시는 이런 문제에 아주 적합하다.
+원본 스토리지의 파일분포가 다음과 같다고 예를 들어 보자.
+
+.. figure:: img/enterprise27.png
+   :align: center
+
+단순 캐싱만으로 문제가 해결되지 않는다. 
+흔히 아래와 같이 파일을 N등분으로 나누어 서비스하는 모습을 상상한다.
+
+.. figure:: img/enterprise28.png
+   :align: center
+
+하지만 현실은 로드 밸런서의 균등분산(Round Robin)을 통해 모두 같은 콘텐츠를 서비스하게 된다.
+
+.. figure:: img/enterprise29.png
+   :align: center
+
+이런 경우 캐시의 효과는 매우 떨어지게 되어 스토리지의 부하를 절감되지 않는다.
+
 
 
 .. toctree::
    :maxdepth: 2
+
+
+.. _enterprise-tier:
+
+계층 캐시
+====================================
+
+대규모 서비스에서는 캐시를 2 계층으로 두는 것이 효과적이다.
+
+.. figure:: img/enterprise30.png
+   :align: center
+
+=================== =================================== =================================
+-                   Parent Layer                         Child Layer
+=================== =================================== =================================
+역할                 COLD 저장 및 스토리지 부하 절감       HOT 저장 및 콘텐츠 분산
+증설시점             원본 콘텐츠 증가시점                  트래픽 증가시점
+=================== =================================== =================================
+
+STON은 중앙집중 서버없이 구조와 설정만으로 문제를 해결한다. 
+구체적인 설정을 살펴보자.
+
+**Parent Layer** 는 단순하게 원본서버에서 캐싱하면 된다. ::
+
+   # vhosts.xml - <Vhosts>
+
+   <Vhost Name="parent-1.example.com">
+      <Origin>
+         <Address>storage.example.com</Address>
+      </Origin>
+      <Options>
+         <IfRange Purge="ON">ON</IfRange>
+      </Options>
+   </Vhost>
+
+-  :ref:`env-vhost-activeorigin`
+-  :ref:`handling-http-requests-header-if-range`
+
+
+**Child Layer** 에서는 **Parent Layer** 의 주소로 콘텐츠를 분산하도록 설정한다. ::
+
+   # vhosts.xml - <Vhosts>
+
+   <Vhost Name="www.example.com">
+      <Origin>
+         <Address>parent-1.example.com</Address>
+         <Address>parent-2.example.com</Address>
+         <Address>parent-3.example.com</Address>
+         <Address>parent-4.example.com</Address>
+      </Origin>
+      <OriginOptions>
+         <BalanceMode>Hash</BalanceMode>
+      </OriginOptions>
+   </Vhost>
+   
+-  :ref:`env-vhost-activeorigin`
+-  :ref:`origin-balancemode`
+
+
+이상의 설정에서 알 수 있듯이 매우 간단한 설정만으로 대규모 서비스를 안정적으로 처리할 수 있다. 
+``<IfRange>`` 설정에 대해서는 `enterprise-block`_ 에서 자세히 다룬다.
+
 
 
 .. _enterprise-block:
@@ -223,6 +316,8 @@ STON은 ``If-Range`` 헤더를 통해 최종 정합성(Eventual Consistency) 모
 
 2차/자식 캐시는 최신 컨텐츠를 캐싱하게 된다. 이후 모든 클라이언트는 최신 컨텐츠를 제공 받는다.
 
+.. figure:: img/enterprise24.png
+   :align: center
 
 .. note:
 
@@ -237,10 +332,10 @@ Purge 정책
 단 계층 Purge에서는 주의할 점이 있다. 
 반드시 1차/부모 캐시서버부터 Purge를 진행해 주어야 한다.
 
-.. figure:: img/enterprise24.png
+.. figure:: img/enterprise25.png
    :align: center
 
 만약 2차/자식 캐시부터 Purge할 경우 2차/자식 컨텐츠를 갱신 시점에 1차/부모 캐시의 컨텐츠 갱신을 보장할 수 없어 무결성 문제가 발생할 수 있다.
 
-.. figure:: img/enterprise25.png
+.. figure:: img/enterprise26.png
    :align: center
