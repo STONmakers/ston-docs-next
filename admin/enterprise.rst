@@ -3,7 +3,7 @@
 21장. 엔터프라이즈 서비스
 ****************************
 
-이 장에서는 엔터프라이즈 서비스 구성에 대해 자세히 설명한다.
+이 장에서는 엔터프라이즈 서비스 구성에서 대해 자세히 설명한다.
 
 
 .. toctree::
@@ -42,6 +42,7 @@ HTTP 프로토콜은 ``Range`` 헤더를 통한 블럭 다운로드와 캐싱 �
 
 .. figure:: img/enterprise2.png
    :align: center
+
 
 .. note:
 
@@ -143,9 +144,6 @@ HTTP에서는 `If-Range <https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/
 
 운좋게 컨텐츠가 완성될 수도 있지만 무한 루프에 빠질 수도 있다.
 
-.. figure:: img/enterprise14.png
-   :align: center
-
 
 
 Zero TTL (Time To Live)
@@ -155,7 +153,7 @@ Zero TTL (Time To Live)
 이 상태가 유지되는 이유는 1차/부모 캐시가 TTL(Time To Live) 동안 원본서버의 갱신을 확인하지 않기 때문이다. 
 다소 극단적인 것처럼 들릴지도 모르지만 1차/부모 캐시의 TTL을 0초로 설정하면 응답 전 원본서버의 변경여부를 확인할 수 있다.
 
-.. figure:: img/enterprise15.png
+.. figure:: img/enterprise14.png
    :align: center
 
 TTL이 0인 경우 1차/부모 캐시와 원본서버간에 1 트랜잭션 동안만 컨텐츠가 유효하다. 
@@ -163,7 +161,7 @@ TTL이 0인 경우 1차/부모 캐시와 원본서버간에 1 트랜잭션 동�
 이후 다시 요청을 처리하기 위해서는 반드시 원본 갱신여부를 확인해야 한다. 
 이 방식의 최대 단점은 원본 요청이 매우 많아진다는 점이다.
 
-.. figure:: img/enterprise16.png
+.. figure:: img/enterprise15.png
    :align: center
 
 적절히 짧은 TTL은 무결성 문제의 빈도를 낮추며 원본 부하를 줄인다. 
@@ -179,7 +177,7 @@ TTL이 0인 경우 1차/부모 캐시와 원본서버간에 1 트랜잭션 동�
 STON은 ``If-Range`` 헤더를 통해 최종 정합성(Eventual Consistency) 모델을 구현하여 문제를 해결한다. 
 문제 상황은 다음 2가지이다.
 
-.. figure:: img/enterprise17.png
+.. figure:: img/enterprise16.png
    :align: center
 
 위 그림의 빨간색 요청이 발생하는 순간 무결성이 깨진다. 2가지 상황을 나누어 이해해야 한다.
@@ -187,40 +185,40 @@ STON은 ``If-Range`` 헤더를 통해 최종 정합성(Eventual Consistency) 모
 
 먼저 ①번 상황에 대해 알아보자. 2차/자식 캐시가 1차/부모 캐시에 Range 요청을 보낼 때 If-Range 를 명시한다.
 
-.. figure:: img/enterprise18.png
+.. figure:: img/enterprise17.png
    :align: center
 
 1차/부모 캐시는 2차/자식 캐시가 보내는 ``If-Range`` 를 검사해 자신보다 최신의 컨텐츠를 소유하고 있다면 스스로를 폐기한다. 
 이는 2차/자식 캐시를 신뢰할 수 있다고 판단될 때만 할 수 있는 설정이다.
 
-.. figure:: img/enterprise19.png
+.. figure:: img/enterprise18.png
    :align: center
 
 1차/부모 캐시는 원본 서버로부터 최신 컨텐츠로 갱신한다.
 
-.. figure:: img/enterprise20.png
+.. figure:: img/enterprise19.png
    :align: center
 
 2차/자식 캐시는 1차/부모 캐시로부터 올바른 응답을 받게 된다.
 
-.. figure:: img/enterprise21.png
+.. figure:: img/enterprise20.png
    :align: center
 
 ②번 상황은 보다 직관적이다. 
 2차/자식 캐시가 1차/부모 캐시에 ``Range`` 요청을 보낼 때 ``If-Range`` 헤더를 명시한다.
 
-.. figure:: img/enterprise22.png
+.. figure:: img/enterprise21.png
    :align: center
 
 1차/부모 캐시는 2차/자식 캐시가 보내는 ``If-Range`` 를 검사해 자신이 최신의 컨텐츠를 소유하고 있다면 ``200 OK`` 로 응답한다.
 
-.. figure:: img/enterprise23.png
+.. figure:: img/enterprise22.png
    :align: center
 
 2차/자식 캐시는 ``If-Range`` 무결성 문제가 확인된 객체를 폐기하고 클라이언트 다운로드를 실패 시킨다. 
 1차/부모 캐시가 보낸 ``200 OK`` 응답 세션을 통해 새로운 컨텐츠 캐싱을 시작한다.
 
-.. figure:: img/enterprise24.png
+.. figure:: img/enterprise23.png
    :align: center
 
 2차/자식 캐시는 최신 컨텐츠를 캐싱하게 된다. 이후 모든 클라이언트는 최신 컨텐츠를 제공 받는다.
@@ -239,10 +237,10 @@ Purge 정책
 단 계층 Purge에서는 주의할 점이 있다. 
 반드시 1차/부모 캐시서버부터 Purge를 진행해 주어야 한다.
 
-.. figure:: img/enterprise25.png
+.. figure:: img/enterprise24.png
    :align: center
 
 만약 2차/자식 캐시부터 Purge할 경우 2차/자식 컨텐츠를 갱신 시점에 1차/부모 캐시의 컨텐츠 갱신을 보장할 수 없어 무결성 문제가 발생할 수 있다.
 
-.. figure:: img/enterprise26.png
+.. figure:: img/enterprise25.png
    :align: center
