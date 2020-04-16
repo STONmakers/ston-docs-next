@@ -44,9 +44,9 @@
    :maxdepth: 2
 
 
-.. _enterprise-tier:
+.. _enterprise-conf:
 
-2-Tier 구조
+구성
 ====================================
 
 대규모 서비스에서는 캐시를 2-Tier 구조로 두는 것이 효과적이다.
