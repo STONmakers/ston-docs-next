@@ -16,10 +16,10 @@ Prefetch는 관리자가 Manager port를 통해 Job(Prefetch 파일목록)을 �
 API
 ====================================
 
-Prefetch용 HTTP API를 지웒나다.
+Prefetch용 HTTP API를 지원한다.
 
 -  Job 등록
--  Job 조회 (with 상태필터)
+-  Job 조회 (+ 상태필터)
 -  Job 삭제
 
 모든 API는 Job 단위로 동작한다.
