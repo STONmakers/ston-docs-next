@@ -56,7 +56,7 @@ Job 등록
                 {
                     "vhost" : "bar.com",
                     "urls" : [
-                        { "url" : "/demo.zip", "auth-code": "1323901283" },
+                        { "url" : "/demo.zip", "header1": "1323901283" },
                         { "url" : "/search/topN.list", "keyword": "shoe" }
                     ]
                 }
@@ -70,7 +70,7 @@ Job 등록
 -  ``url`` 의 대소문자 구분은 가상호스트 설정을 따른다.
 -  가상호스트가 `Accept-Encoding헤더 <https://ston.readthedocs.io/ko/latest/admin/caching_policy.html#accept-encoding>`_ 를 구분하도록 설정되었다면 다운로드는 ON/OFF 를 구분하여 2번 이루어진다.
 -  접수된 파일목록은 예정된 시간에 수행되지만 ``schedule`` 속성이 ``now`` 인 경우 (현재 작업 중인 prefetch가 없다면) 즉시 시작된다.
--  (bar.com의 예와 같이) 만약 가상호스트에 별도의 커스터마이징 모듈이 연동되어 있다면 예제의 ``auth-code`` 나 ``keyword`` 처럼 커스텀 필드로 확장 가능하다.
+-  (bar.com의 예와 같이) 만약 가상호스트에 별도의 커스터마이징 모듈이 연동되어 있다면 예제의 ``header1`` 나 ``keyword`` 처럼 커스텀 필드로 확장 가능하다.
 
 
 
