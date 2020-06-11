@@ -324,14 +324,23 @@ API를 통해 가상호스트의 원본서버 배제/복구를 초기화한다.
 ``Hash`` 분산 - Suffix 무시
 ---------------------
 
-STON의 많은 기능은 기존 URL 뒤에 STON이 인식할 수 있는 명령어를 붙이는 형식이다. ::
+STON의 많은 기능은 기존 URL 뒤에 명령어를 붙이는 형식이다. ::
 
    http://example.com/origin.jpg/...{명령어}...
    http://example.com/origin.jpg/dims/resize/100x100
 
 
-이런 명령어들이 URL에 포함되면서 ``Hash`` 모드로 원본서버를 선택할 때 HIT율이 저하될 수 있다. 
-원본서버 또는 2 Tier구조에서 Parent 캐시의 HIT율을 높이기 위해 URL 중 매칭되는 Suffix를 무시한다. ::
+자칫 이런 명령어들이 ``Hash`` 모드 원본분산 시 HIT율 저하의 원인이 되기도 한다.
+예를 들어 다음 URL들은 모두 같은 원본파일을 변형하지만 URL이 다르다. ::
+
+   http://example.com/origin.jpg/dims/resize/100x100
+   http://example.com/origin.jpg/dims/strip/on/autorotate/on
+   http://example.com/origin.jpg/dims/grayscale/true
+
+결과적으로 각기 다른 원본서버가 선택되면 불필요한 원본부하가 발생한다.
+
+
+이런 경우를 방지하기 위해 URL 중 매칭되는 Suffix를 무시하도록 설정한다. ::
 
 
    # server.xml - <Server><VHostDefault><OriginOptions>
@@ -345,18 +354,14 @@ STON의 많은 기능은 기존 URL 뒤에 STON이 인식할 수 있는 명령�
 
 -  ``<BalanceHashRules>`` 원본서버 ``Hash`` 분산시에만 동작하며 URL을 Hash할 때 ``<IgnoreSuffix>`` 와 매칭되는 영역 이후를 모두 무시한다.
 
+위와 같이 ``<IgnoreSuffix>/dims/</IgnoreSuffix>`` 를 설정해 두면 예제의 3 URL들은 모두 같은 원본서버를 선택한다. ::
 
-예를 들어 다음 URL들은 모두 같은 원본파일을 변형한다. 
-하지만 URL만으로 Hash하면 모두 다른 원본서버로 요청될 우려가 있다. ::
-
-   http://example.com/origin.jpg/dims/resize/100x100
-   http://example.com/origin.jpg/dims/strip/on/autorotate/on
-   http://example.com/origin.jpg/dims/grayscale/true
+   http://example.com/origin.jpg    # /dims/resize/100x100 무시
+   http://example.com/origin.jpg    # /dims/strip/on/autorotate/on 무시
+   http://example.com/origin.jpg    # /dims/grayscale/true 무시
 
 
-하지만 위와 같이 ``<IgnoreSuffix>/dims/</IgnoreSuffix>`` 를 설정해 두면 위 주소의 Hash 소스는 다음과 같이 동일해져 HIT율이 상승한다. ::
-
-   http://example.com/origin.jpg
+``<BalanceHashRules>`` 은 원본서버 선택에만 관여할 뿐 URL을 변형시키는 것은 아니다.
 
 
 

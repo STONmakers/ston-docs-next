@@ -72,7 +72,7 @@ Memory-Only 모드란 디스크를 이용하지 않고 컨텐츠를 메모리에
 Volatile 가상호스트
 ====================================
 
-특정 가상호스트만 `Memory-Only 모드`_ 로 동작하도록 지정할 수 있다. 
+특정 가상호스트만 `Memory-Only 모드`_ 로 동작하도록 지정한다. 
 이를 **Volatile 가상호스트** 라고 부른다. ::
 
    # vhosts.xml - <Vhosts>
@@ -80,7 +80,7 @@ Volatile 가상호스트
    <Vhost Name="foo.com" Volatile="OFF"> ... </Vhost>
 
 
-`Memory-Only 모드`_ 라면 ``Volatile`` 키워드는 무시된다. 
+`Memory-Only 모드`_ 라면 ``Volatile (기본: OFF)`` 키워드는 무시된다. 
 디스크모드라면 ``Volatile="ON"`` 인 가상호스트는 `Memory-Only 모드`_ 로 동작한다.
 
 
