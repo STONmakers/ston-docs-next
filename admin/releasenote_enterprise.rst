@@ -10,12 +10,12 @@ v20.x
 ----------------------------
 
 -  :ref:`adv_topics_volatile` 기능 추가
--  원본서버 - :ref:`origin-balancemode-url-suffix-ignore` 기능 추가
+-  원본서버 :ref:`origin-balancemode-url-suffix-ignore` 기능 추가
 
 
 **버그수정**
 
--  HTTPS - SSLv3.0 이 활성화 되지 않는 문제 수정(2.7.0 ~ 2.7.5)
+-  HTTPS - SSLv3.0 이 활성화 되지 않는 문제 수정(19.12.0 ~ 20.05.0)
 -  HTTPS - SNI가 활성화 되어 있는 경우 인증서가 잘못 선택 되는 문제 수정
 
    .. note::
