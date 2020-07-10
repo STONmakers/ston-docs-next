@@ -25,6 +25,7 @@
    
    <Purge2Expire>NONE</Purge2Expire>
    <RootPurgeExpire>ON</RootPurgeExpire>
+   <RootHardPurge>ON</RootHardPurge>
    <ResCodeNoCtrlTarget>200</ResCodeNoCtrlTarget>
 
 -  ``<Purge2Expire> (기본: NONE)``
@@ -49,6 +50,14 @@
    - ``PURGE`` `Purge`_ 만 허용한다.
    - ``EXPIRE`` `Expire`_ 만 허용한다.
    - ``OFF`` 모든 `Purge`_ / `Expire`_ 를 금지한다.
+
+-  ``<RootHardPurge> (기본: ON)``
+   
+   전체 콘텐츠( ``/*`` ) 에 대한 `HardPurge`_ 는 모든 캐싱을 무효화시킵니다. 
+   
+   - ``ON`` 전체 콘텐츠의 `HardPurge`_ 를 허용한다.
+   - ``OFF`` 전체 콘텐츠의 `HardPurge`_ 를 금지한다.
+   
 
 -  ``<ResCodeNoCtrlTarget> (기본: 200)``
 
