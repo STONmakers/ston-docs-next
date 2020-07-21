@@ -11,7 +11,7 @@ v20.x
 ----------------------------
 **기능개선/정책변경**
 
-- :ref:`handling-http-requests-modify-client` - ``#SESSIONID`` 예약어 추가
+- :ref:`handling_http_requests_modify_client` - ``#SESSIONID`` 예약어 추가
 
 
 **버그수정**
