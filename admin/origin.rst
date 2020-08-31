@@ -187,7 +187,7 @@ IP의 TTL이 너무 길 경우 지나치게 많은 IP를 사용하게 되어 의
 원본 Cache-Control 동작정책
 ====================================
 
-원본서버가 다음과 같이 응답한 경우 STON의 동작에 대해 기술한다. ::
+원본서버가 다음과 같이 혼란스럽게 응답한 경우 STON의 동작에 대해 기술한다. ::
 
    Cache-Control: private, no-transform, max-age=900
 
@@ -198,6 +198,7 @@ IP의 TTL이 너무 길 경우 지나치게 많은 IP를 사용하게 되어 의
    - `Mozilla - Cache-Control <https://developer.mozilla.org/ko/docs/Web/HTTP/Headers/Cache-Control>`_ 에서는 다음과 같이 설명하고 있다. ::
    
       private
+      
          응답이 단일 사용자를 위한 것이며 공유 캐시에 의해 저장되지 않아야 한다는 것을 나타냅니다. 
          사설 캐시는 응답을 저장할 수도 있습니다.
 
