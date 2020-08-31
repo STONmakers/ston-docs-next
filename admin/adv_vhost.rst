@@ -328,7 +328,7 @@ Redirect 추적
      무한히 Redirect되는 경우를 방지하기 위하여 1회만 추적한다.
 
 
-응답코드가 아닌 ``Location`` 헤더가 가리키는 URL 조건으로 동작시킬 수 있다. ::
+특정 URL 패턴에 대해서만 동작시킬 수 있다. ::
 
    # server.xml - <Server><VHostDefault><OriginOptions>
    # vhosts.xml - <Vhosts><Vhost><OriginOptions>
