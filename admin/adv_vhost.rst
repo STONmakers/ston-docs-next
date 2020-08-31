@@ -305,7 +305,7 @@ Sub-Path 지정
 Redirect 추적
 ====================================
 
-원본서버에서 Redirect계열(301, 302, 303, 307)로 응답하는 경우 Location헤더를 추적하여 콘텐츠를 요청한다.
+원본서버에서 Redirect계열(301, 302, 303, 307)로 응답하는 경우 ``Location`` 헤더를 추적하여 콘텐츠를 요청한다.
 
    .. figure:: img/conf_redirectiontrace.png
       :align: center
@@ -327,6 +327,19 @@ Redirect 추적
      형식에 맞지 않거나 Location헤더가 없는 경우에는 동작하지 않는다.
      무한히 Redirect되는 경우를 방지하기 위하여 1회만 추적한다.
 
+
+응답코드가 아닌 ``Location`` 헤더가 가리키는 URL 조건으로 동작시킬 수 있다. ::
+
+   # server.xml - <Server><VHostDefault><OriginOptions>
+   # vhosts.xml - <Vhosts><Vhost><OriginOptions>
+
+   <RedirectionTrace ResCode="302,307">OFF
+      <URL>*.ts</URL>
+      <URL>*.mp4</URL>
+   </RedirectionTrace>
+
+
+``<RedirectionTrace>`` 값이 ``OFF`` 인 경우라도 하위 설정인 ``<URL>`` 패턴과 일치한다면 ``Location`` 헤더의 값을 추적한다.
 
 
 .. _adv-vhost-link:
