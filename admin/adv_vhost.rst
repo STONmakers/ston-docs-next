@@ -333,13 +333,14 @@ Redirect 추적
    # server.xml - <Server><VHostDefault><OriginOptions>
    # vhosts.xml - <Vhosts><Vhost><OriginOptions>
 
-   <RedirectionTrace ResCode="302,307">OFF
+   <RedirectionTrace ResCode="302,307">ON
       <URL>*.ts</URL>
       <URL>*.mp4</URL>
    </RedirectionTrace>
 
 
-``<RedirectionTrace>`` 값이 ``OFF`` 인 경우라도 하위 설정인 ``<URL>`` 패턴과 일치한다면 ``Location`` 헤더의 값을 추적한다.
+``<RedirectionTrace>`` 하위에 ``<URL>`` 들을 열거하면 ``Location`` 헤더 값의 특정 패턴에 대해서만 추적한다.
+
 
 
 .. _adv-vhost-link:
