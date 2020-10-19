@@ -235,7 +235,7 @@ URL 전처리 시 프로토콜 조건을 설정한다. ::
    </URLRewrite>
 
 
--  ``Protocol`` 속성 (기본: ALL)``
+-  ``Protocol (기본: ALL)`` 속성
 
    -  ``ALL`` 모든 프로토콜 매칭
    -  ``HTTP`` HTTP에 대해서만 패턴 매칭
