@@ -14,13 +14,13 @@ v2.7.x
 
 - :ref:`adv-vhost-url-rewrite` – :ref:`adv-vhost-url-rewrite-protocol` 추가
 - :ref:`origin-balancemode-url-suffix-ignore` 추가
-- HardPurge 수행 중 낮은 확률로 비정상 종료 되는 문제 수정
-
  
+
 **버그수정**
 
 - ``ByClient`` 기능 사용시 Purge API가 수행 되지 않는 문제
 - 바이패스 동작 중 비정상 종료 되는 문제
+- HardPurge 수행 중 낮은 확률로 비정상 종료 되는 문제 수정
 
 
 
