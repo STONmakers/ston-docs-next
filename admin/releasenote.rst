@@ -13,7 +13,8 @@ v2.7.x
 **기능개선/정책변경**
 
 - :ref:`adv-vhost-url-rewrite` – :ref:`adv-vhost-url-rewrite-protocol` 추가
-- :ref:`origin-balancemode-url-suffix-ignore` 추가 
+- :ref:`origin-balancemode-url-suffix-ignore` 추가
+- HardPurge 수행 중 낮은 확률로 비정상 종료 되는 문제 수정
 
  
 **버그수정**
