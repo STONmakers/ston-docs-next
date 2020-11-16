@@ -13,11 +13,11 @@ v20.x
 **기능개선/정책변경**
 
 -  Fatal 로그 기록 방식 개선
+-  :ref:`monitoring-stats-vhost` , :ref:`monitoring-stats-host` - 시간 정밀도 개선
  
 
 **버그수정**
 
--  VirtualHost, Host 시간 통계의 정밀도가 떨어지는 문제
 -  :ref:`admin-log-access-custom` - ``%H`` 예약어가 동작하지 않는 문제 수정
 
 
