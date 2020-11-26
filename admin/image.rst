@@ -202,10 +202,10 @@ Format 변경
 
 
 
-고급 기능 ``M2 Platform``
+고급 기능 ``powered by M2``
 ====================================
 
-이외에 다양한 `이미지 서비스 패턴 <https://csp-kr.readthedocs.io/ko/latest/patterns/pattern_image.html>`_ 은 `M2 파이프라인 플랫폼 <https://m2-kr-next.readthedocs.io/>`_ 의 `이미지 엔진<https://m2-kr.readthedocs.io/ko/latest/guide/imagetool.html>`_ 에서 구현된다.
+이외에 다양한 `이미지 서비스 패턴 <https://csp-kr.readthedocs.io/ko/latest/patterns/pattern_image.html>`_ 은 `M2 파이프라인 플랫폼 <https://m2-kr-next.readthedocs.io/>`_ 의 `이미지 엔진 <https://m2-kr.readthedocs.io/ko/latest/guide/imagetool.html>`_ 에서 구현된다.
 
 
 .. _media-dims-optimize:
