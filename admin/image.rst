@@ -202,7 +202,7 @@ Format 변경
 고급 기능
 ====================================
 
-더욱 다양한 이미지 서비스 패턴은 ``M2`` 플랫폼에서 구현된다.
+더욱 다양한 이미지 서비스 패턴은 ``M2`` 파이프라인 플랫폼에서 구현된다.
 
--  `이미지 서비스 패턴 <https://csp-kr.readthedocs.io/ko/latest/patterns/pattern_image.html>`_
+-  Contents Service Patterns - `이미지 서비스 패턴 <https://csp-kr.readthedocs.io/ko/latest/patterns/pattern_image.html>`_
 -  ``M2`` 파이프라인 플랫폼 - `이미지 엔진 <https://m2-kr.readthedocs.io/ko/latest/guide/imagetool.html>`_ 
