@@ -4,7 +4,6 @@
 ******************
 
 이 장에서는 이미지를 전송시점에 on-the-fly로 변환/전송하는 이미지 툴(Tool)에 대해 다룬다.
-이미지 툴은 DIMS(Dynamic Image Management System)를 포함하여 원본이미지를 다양한 형태로 가공하는 기능이다. 
 이미지 가공에 대한 기록은 :ref:`admin-log-image` 에 기록된다.
 
 
@@ -225,7 +224,7 @@ JPEG, JPEG-2000, Loseless-JPEG 이미지만 지원이 가능하다.
 
    http://image.example.com/img.jpg/dims/resize/100x100/optimize
 
-다른 모든 DIMS기능이 시스템 자원을 많이 사용하지만 그 중에서도 최적화가 가장 무거운 작업이다.
+
 다음은 HitRatio가 0%인 상태에서 이미지 크기별 성능 테스트 결과이다.
 
 -  ``OS`` CentOS 6.2 (Linux version 2.6.32-220.el6.x86_64 (mockbuild@c6b18n3.bsys.dev.centos.org) (gcc version 4.4.6 20110731 (Red Hat 4.4.6-3) (GCC) ) #1 SMP Tue Dec 6 19:48:22 GMT 2011)
@@ -304,13 +303,13 @@ Annotation은 이미지에 글씨를 입힐 수 있는 기능이다.
    # server.xml - <Server><VHostDefault><Options><Dims>
    # vhosts.xml - <Vhosts><Vhost><Options><Dims>
 
-   <Annotation Name="statictext">STON Edge Server</Annotation>
+   <Annotation Name="statictext">on the fly</Annotation>
    <Annotation Name="maintext">$QUERYSTRING[msg]</Annotation>
    <Annotation Name="subtext">$QUERYSTRING[tag]</Annotation>
 
 다음과 같이 텍스트를 전달한다. ::
 
-   // "STON Edge Server" 를 statictext로 삽입
+   // "on the fly" 를 statictext로 삽입
    http:// .../dims/annotation/statictext
 
    // msg(="HelloWorld") 를 maintext로 삽입
