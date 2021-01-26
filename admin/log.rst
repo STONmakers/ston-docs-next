@@ -626,6 +626,8 @@ Origin 로그
    -  ``recovery`` :ref:`origin_exclusion_and_recovery` 에서 복구용도로 사용된 세션
    -  ``healthcheck`` :ref:`origin-health-checker` 가 사용한 세션
 
+-  ``time-sock-creation (단위: ms)`` - socket FD가 생성되는게 걸린 시간
+-  ``x-cs-retry`` - 해당 세션의 Retry 여부 (Retry 했다면 ``Y`` , Retry 하지 않았다면 ``N`` )
 
 
 .. _admin-log-image:
