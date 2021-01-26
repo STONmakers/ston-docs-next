@@ -282,7 +282,7 @@ Expires조건은 /svc/{가상호스트 이름}/expires.txt에 설정한다. ::
 
    원본서버가 보낸 Max-Age가 없거나, 값이 0인 경우 Expire헤더를 붙이지 않는다.
 
-   ``#TT:_LEFT`` 키워드를 통해 콘텐츠가 만료되는 시간을 Expires 헤더의 값으로 명시한다. 
+   ``#TTL_LEFT`` 키워드를 통해 콘텐츠가 만료되는 시간을 Expires 헤더의 값으로 명시한다. 
    기준 설정이 ``access`` 인 경우에만 동작한다. ::
 
       /*, #TTL_LEFT, access
