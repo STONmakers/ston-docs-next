@@ -3,6 +3,12 @@
 Appendix F: 릴리스 노트  ``[Enterprise]``
 ***********************
 
+.. note::
+
+   2021년부터 ``Enterprise Edition`` 은 `M2 <https://m2-kr.readthedocs.io/ko/latest/>`_ 로 통합됨을 알려 드립니다.
+   
+
+
 v20.x
 ====================================
 
