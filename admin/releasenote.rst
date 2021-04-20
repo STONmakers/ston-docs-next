@@ -12,7 +12,7 @@ v2.7.x
 **기능개선/정책변경**
 
 -  ImageTools – 이미지 :ref:`media-dims-resize-stretch-out` 기능 추가
--  원본 :ref:`origin-busysessioncount`_ 기능 비활성화
+-  원본 :ref:`origin-busysessioncount` 기능 비활성화
 -  WM에서 가상호스트 생성시 불필요한 설정 정리
 
 
