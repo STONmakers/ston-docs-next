@@ -333,17 +333,17 @@ ETag 헤더
 
       -  ``Standard="OFF" (기본)`` 모든 헤더를 캐싱한다.
 
-      -  ``Standard="ON"`` 다음 목록의 표준 헤더만을 캐싱한다. ::
+      -  ``Standard="ON"`` 다음 목록의 표준 헤더만을 캐싱한다.
 
             -  ``Content-Language``
             -  ``Content-Location``
             -  ``Content-MD5``
-            -  Proxy-Authenticate``
-            -  Retry-After``
-            -  TE``
-            -  Trailer``
-            -  Warning``
-            -  WWW-Authenticate``
+            -  ``Proxy-Authenticate``
+            -  ``Retry-After``
+            -  ``TE``
+            -  ``Trailer``
+            -  ``Warning``
+            -  ``WWW-Authenticate``
 
 
 
