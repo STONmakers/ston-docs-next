@@ -12,7 +12,7 @@ v2.7.x
 **기능개선/정책변경**
 
 -  MP4HLS – 비정상 인코딩 MP4 파일 호환성 강화
--  :ref:`원본 비표준 헤더` - 캐싱 정책과 무관한 원본헤더 값 추가 가능
+-  :ref:`handling_http_requests_headers_originalheader` - 캐싱 정책과 무관한 원본헤더 값 추가 가능
 
 
 
