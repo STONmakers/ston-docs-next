@@ -331,7 +331,7 @@ ETag 헤더
    -  ``ON`` 원본이 전송하는 모든 헤더를 캐싱한다. 
       단, ``cookie`` , ``set-cookie`` , ``set-cookie2`` 헤더는 항상 제외된다.
 
-      -  ``Standard="OFF"`` 모든 헤더를 캐싱한다.
+      -  ``Standard="OFF" (기본)`` 모든 헤더를 캐싱한다.
 
       -  ``Standard="ON"`` 다음 표준헤더만을 캐싱한다. ::
 
