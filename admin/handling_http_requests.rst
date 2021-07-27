@@ -317,7 +317,7 @@ ETag 헤더
 원본 비표준 헤더
 ---------------------
 
-성능과 보안상의 이유로 원본서버가 보내는 헤더 중 표준헤더만을 선택적으로 인식한다. ::
+성능과 보안상의 이유로 원본서버가 보내는 헤더 중 캐싱과 관련된 표준 헤더만을 선택적으로 인식한다. ::
 
    # server.xml - <Server><VHostDefault><Options>
    # vhosts.xml - <Vhosts><Vhost><Options>
@@ -333,17 +333,17 @@ ETag 헤더
 
       -  ``Standard="OFF" (기본)`` 모든 헤더를 캐싱한다.
 
-      -  ``Standard="ON"`` 다음 표준헤더만을 캐싱한다. ::
+      -  ``Standard="ON"`` 다음 목록의 표준 헤더만을 캐싱한다. ::
 
-            Content-Language  
-            Content-Location
-            Content-MD5
-            Proxy-Authenticate
-            Retry-After
-            TE
-            Trailer
-            Warning
-            WWW-Authenticate
+            -  ``Content-Language``
+            -  ``Content-Location``
+            -  ``Content-MD5``
+            -  Proxy-Authenticate``
+            -  Retry-After``
+            -  TE``
+            -  Trailer``
+            -  Warning``
+            -  WWW-Authenticate``
 
 
 
