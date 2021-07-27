@@ -335,15 +335,15 @@ ETag 헤더
 
       -  ``Standard="ON"`` 다음 표준헤더만을 캐싱한다. ::
 
-         Content-Language  
-         Content-Location
-         Content-MD5
-         Proxy-Authenticate
-         Retry-After
-         TE
-         Trailer
-         Warning
-         WWW-Authenticate
+            Content-Language  
+            Content-Location
+            Content-MD5
+            Proxy-Authenticate
+            Retry-After
+            TE
+            Trailer
+            Warning
+            WWW-Authenticate
 
 
 
