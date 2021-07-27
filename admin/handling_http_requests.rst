@@ -314,7 +314,7 @@ ETag 헤더
 
 .. _handling_http_requests_headers_originalheader:
 
-원본 비표준 헤더
+헤더 캐싱
 ---------------------
 
 성능과 보안상의 이유로 원본서버가 보내는 헤더 중 캐싱과 관련된 표준 헤더만을 선별적으로 인식한다. 
@@ -328,7 +328,7 @@ ETag 헤더
    -  ``set-cookie2``
 
 
-이외의 헤더를 캐싱하기 위해서는 추가 설정이 필요하다. ::
+원본이 응답하는 헤더를 캐싱하기 위해서는 추가 설정이 필요하다. ::
 
    # server.xml - <Server><VHostDefault><Options>
    # vhosts.xml - <Vhosts><Vhost><Options>
