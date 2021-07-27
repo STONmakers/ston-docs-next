@@ -312,6 +312,8 @@ ETag 헤더
 기본응답 헤더
 ====================================
 
+.. _handling_http_requests_headers_originalheader:
+
 원본 비표준 헤더
 ---------------------
 
@@ -320,14 +322,29 @@ ETag 헤더
    # server.xml - <Server><VHostDefault><Options>
    # vhosts.xml - <Vhosts><Vhost><Options>
 
-   <OriginalHeader>OFF</OriginalHeader>
+   <OriginalHeader Standard="OFF">OFF</OriginalHeader>
 
 -  ``<OriginalHeader>``
 
    -  ``OFF (기본)`` 표준헤더가 아니라면 무시한다.
 
-   -  ``ON`` cookie, set-cookie, set-cookie2를 제외한 모든 헤더를 저장하여 클라이언트에게 전달한다.
-      단, 메모리와 저장비용을 좀 더 소비한다.
+   -  ``ON`` 원본이 전송하는 모든 헤더를 캐싱한다. 
+      단, ``cookie`` , ``set-cookie`` , ``set-cookie2`` 헤더는 항상 제외된다.
+
+      -  ``Standard="OFF"`` 모든 헤더를 캐싱한다.
+
+      -  ``Standard="ON"`` 다음 표준헤더만을 캐싱한다. ::
+
+         Content-Language  
+         Content-Location
+         Content-MD5
+         Proxy-Authenticate
+         Retry-After
+         TE
+         Trailer
+         Warning
+         WWW-Authenticate
+
 
 
 .. _handling_http_requests_basic_via:
