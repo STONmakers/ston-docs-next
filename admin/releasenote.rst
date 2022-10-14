@@ -11,7 +11,7 @@ v2.7.x
 2.7.40 (2022.10.20)
 ----------------------------
 
--  캐싱객체 초기화 - :ref:`origin-fullrangeinit-head` 지원
+-  캐싱객체 :ref:`origin-fullrangeinit-head` 지원
 -  DNS resolving 시스템 콜이 잠길 때 원본서버 IP목록이 갱신되지 않던 문제 수정
 
 
