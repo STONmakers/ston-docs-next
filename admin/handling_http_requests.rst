@@ -659,17 +659,14 @@ Value가 입력되지 않은 경우 빈 값("")이 입력된다.
       -  ``SourceSize (기본: 2-2048, 단위: KB)`` 원본 크기를 범위로 지정한다. 너무 작은 파일은 압축률이 떨어진다. 반대로 너무 큰 파일은 과도하게 CPU를 점유할 수 있다.
 
 압축된 콘텐츠는 원본과 다른 콘텐츠로 인식/캐싱되며, 동일한 요청에 대해 다시 압축되지 않는다.
+
 압축 대상은 /svc/{vhost}/compression.txt 에 지정한다. 정의된 순서대로 적용된다. ::
 
    # /svc/www.example.com/compression.txt
-   # 구분자는 콤마( , ) 이다.
-   # {URL 조건}, {Method}, {Level} 순서로 표기한다.
+   # 압축대상 파일 또는 * 패턴을 지정한다.
 
-   /sample.css, no       // 압축하지 않는다.
-   *.css                 // *.css 조건에 대해 클라이언트 호환성을 고려하여 압축한다.
-   *.htm, gzip           // *.htm 조건에 대해 gzip으로 압축한다.
-   *.xml, br             // *.xml 조건에 대해 brotli로 압축한다.
-   *.js, no              // *.js 조건에 대해 압축하지 않는다.
+   /sample.css
+   /svc/packages/*.xml
 
 압축은 CPU자원을 많이 소모하는 기능이다.
 다음은 파일 크기별 GZIP(Level: 9) 성능 테스트 결과이다.
