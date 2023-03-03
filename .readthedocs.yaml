@@ -1,10 +1,7 @@
 version: 2
-formats: all
+formats: []
 sphinx:
   configuration: conf.py
-build:
-  latex:
-    latexmk_args: ["-f", "-dvi-", "-ps-"]
 python:
   install:
     - requirements: requirements/docs.txt
