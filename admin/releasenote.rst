@@ -12,9 +12,10 @@ v2.8.x
 2.8.3 (2023.05.2)
 ----------------------------
 
--  더 큰 로컬 저장공간 환경에서도 정밀하게 LRU를 관리할 수 있도록 :ref:`adv_topics_perf_securedisk` 정책 고도화
+-  더 큰 디스크 공간지원을 위해 :ref:`adv_topics_perf_securedisk` 정책 고도화
 
 -  :ref:`caching-policy-ttl-basic` 개선
+
    -  ``<NoCache Expire="OFF" />`` 속성 추가
    -  ``<NoStore>`` 설정 추가
 
