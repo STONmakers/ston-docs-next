@@ -12,7 +12,7 @@ v2.8.x
 2.8.3 (2023.05.2)
 ----------------------------
 
--  더 큰 디스크 공간지원을 위해 :ref:`adv_topics_perf_securedisk` 정책 고도화
+-  더 큰 디스크 공간지원을 위한 :ref:`adv_topics_perf_securedisk` 고도화
 
 -  :ref:`caching-policy-ttl-basic` 개선
 
