@@ -218,17 +218,20 @@ MP4파일 헤더의 위치에 상관없이 다운로드와 동시에 실시간�
 
 .. warning::
 
-   암호화 기능은 STON Enterprise 버전 또는 `M2 <https://doc.m2live.co.kr/>`_ 에서 지원됩니다. ::
+   암호화 기능은 STON Enterprise 버전 또는 `M2 <https://doc.m2live.co.kr/>`_ 에서 지원됩니다.
 
-      # server.xml - <Server><VHostDefault><Media>
-      # vhosts.xml - <Vhosts><Vhost><Media>
 
-      <MP4HLS Status="Inactive" Keyword="mp4hls">
-         ... (생략) ...
-         <Encrypt Status="INACTIVE" Keyword="segment.key">
-            <Token Type="enc">xxxxxxxx</Token>
-         </Encrypt>
-      </MP4HLS>
+::
+
+   # server.xml - <Server><VHostDefault><Media>
+   # vhosts.xml - <Vhosts><Vhost><Media>
+
+   <MP4HLS Status="Inactive" Keyword="mp4hls">
+      ... (생략) ...
+      <Encrypt Status="INACTIVE" Keyword="segment.key">
+         <Token Type="enc">xxxxxxxx</Token>
+      </Encrypt>
+   </MP4HLS>
 
 
 
