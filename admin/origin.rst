@@ -81,6 +81,8 @@ Caching과정 중 원본서버에 장애가 발생하면 자동배제한다.
 
    -  ``Log (기본: ON)`` 복구를 위해 사용된 HTTP Transaction을 :ref:`admin-log-origin` 에 기록한다.
 
+   -  ``Host`` 복구 세션에서 사용할 Host 헤더를 설정한다. 설정된 문자열은 Host 헤더와 SNI 필드로 사용한다. 설정되어 있지 않다면 가상호스트 이름을 사용한다. 
+
 
 
 .. _origin-health-checker:
@@ -118,6 +120,8 @@ Health-Checker
    -  ``Recovery (기본: 5회)`` 연속 n회 성공 시 해당서버 재투입
 
    -  ``Log (기본: ON)`` HTTP Transaction을 :ref:`admin-log-origin` 에 기록한다.
+
+   -  ``Host`` 복구 세션에서 사용할 Host 헤더를 설정한다. 설정된 문자열은 Host 헤더와 SNI 필드로 사용한다. 설정되어 있지 않다면 가상호스트 이름을 사용한다. 
 
 Health-Checker는 멀티로 구성할 수 있으며 클라이언트 요청과 상관없이 독립적으로 수행된다.
 `장애감지와 복구`_ 나 다른 Health-Checker와도 정보를 공유하지 않고
