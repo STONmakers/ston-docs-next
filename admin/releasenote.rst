@@ -12,7 +12,7 @@ v2.9.x
 ----------------------------
 
 -  :ref:`caching-policy-custom-cachingkey` 기능 추가
--  `rfc 9111 <https://www.rfc-editor.org/rfc/rfc9111.html>`_ 스펙 지원
+-  `RFC 9111 HTTP Caching <https://www.rfc-editor.org/rfc/rfc9111.html>`_ 스펙 지원
 -  설정파일을 콘솔에서 불완전하게 수정하는 중, WM으로 접근할 경우 기존 인증서 설정이 모두 초기화 되는 증상 수정
 
 
