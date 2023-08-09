@@ -14,7 +14,7 @@ v2.9.x
 -  :ref:`caching-policy-custom-cachingkey` 기능 추가
 -  `RFC 9111 Age (Session 5.1) <https://www.rfc-editor.org/rfc/rfc9111.html#section-5.1>`_ 스펙 지원
 -  설정파일을 콘솔에서 불완전하게 수정하는 중, WM으로 접근할 경우 기존 인증서 설정이 모두 초기화 되는 증상 수정
-
+-  디스크 삭제 프로세스와 비동기 파일 쓰기 시 간헐적 간섭 현상 수정
 
 
 
