@@ -6,7 +6,6 @@ build:
   commands:
     - pip install --upgrade sphinx
 sphinx:
-  builder: html
   configuration: conf.py
 python:
   install:
