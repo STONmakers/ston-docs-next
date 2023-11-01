@@ -8,6 +8,7 @@ build:
 sphinx:
   builder: html
   configuration: conf.py
+  fail_on_warning: false
 python:
   install:
     - requirements: requirements/docs.txt
