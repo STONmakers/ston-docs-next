@@ -1,13 +1,12 @@
 version: 2
+formats: []
 sphinx:
-  builder: html
   configuration: conf.py
   fail_on_warning: true
-build:
-  os: ubuntu-22.04
-  tools:
-    python: "3.12"
 python:
   install:
     - requirements: requirements/docs.txt
-formats: []
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
