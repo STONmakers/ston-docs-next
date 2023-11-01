@@ -30,7 +30,19 @@ import os
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
+  "sphinx_copybutton",
+  "sphinx_design",
+  "sphinx_search.extension",
+  "sphinx_tabs.tabs",
+  "sphinx-prompt",
+  "sphinx.ext.autodoc",
+  "sphinx.ext.autosectionlabel",
+  "sphinx.ext.extlinks",
+  "sphinx.ext.intersphinx",
+  "sphinxcontrib.httpdomain",
+  "sphinxcontrib.video",
+  "sphinxemoji.sphinxemoji",
+  "sphinxext.opengraph",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
