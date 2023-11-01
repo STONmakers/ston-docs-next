@@ -9,5 +9,7 @@ sphinx:
   fail_on_warning: false
 python:
   install:
+    - sphinx
+    - sphinx_rtd_theme 
     - requirements: requirements/docs.txt
 formats: []
