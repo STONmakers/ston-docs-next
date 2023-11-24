@@ -12,8 +12,8 @@ v2.9.x
 ----------------------------
 
 -  ``v2.9.0 ~ v2.9.2`` 에서 원본부하시 비정상 종료될 수 있던 문제 수정
--  :ref:`caching-purge-async` - 비동기 무효화 큐가 꽉 차지 않은 상태에서 ``412 Precondition Failed`` 응답 증상 수정
 -  :ref:`caching-policy-custom-cachingkey` 사용 시 :ref:`caching-policy-accept-encoding` 설정이 반영되지 않는 문제 수정
+-  :ref:`caching-purge-async` - 비동기 무효화 큐가 꽉 차지 않은 상태에서 ``412 Precondition Failed`` 응답 증상 수정
 
 
 .. _release-cdn-2-9-2:
