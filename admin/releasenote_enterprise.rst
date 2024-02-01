@@ -22,7 +22,7 @@ v24.x
 -  :ref:`env-vhost-defaultvhost` 선택시 서비스 포트를 검사하지 않도록 개선
 -  ImageTool(DIMS), 압축등 콘텐츠 가공 과정 중 발생한 원본요청에 대해 ``X-Forwarded-For`` 헤더를 전달하도록 개선
 -  원본서버가 ``Content-Type`` 헤더를 응답하지 않을 때 ``Content-Type`` 헤더는 빈 값으로 명시하던 증상 개선
--  가상 호스트가 삭제될 때 Alias를 반납하여 다른 가상호스트로 양하도록 개선
+-  가상 호스트가 삭제될 때 Alias를 반납하여 다른 가상호스트로 양도하도록 개선
 
 
 v23.x
