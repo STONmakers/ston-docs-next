@@ -86,7 +86,9 @@ OS 구성
 -  ``RHEL/CentOS 7``
 -  ``RHEL/CentOS Stream 8``
 -  ``RHEL/CentOS Stream 9``
--  ``Ubuntu 12.04`` 부터 ``22.04`` 까지
+-  ``Ubuntu 18.04``
+-  ``Ubuntu 20.04``
+-  ``Ubuntu 22.04``
 -  ``Rocky Linux 8`` ( ``RHEL/CentOS`` 패키지 사용)
 
 
