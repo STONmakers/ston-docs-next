@@ -12,7 +12,7 @@ v2.9.x
 2.9.9 (2024.04.09) 
 ----------------------------
 
--  :ref:`https-conf` - SNI(Server Name Indication) 필드가 없는 ClientHello에 대해 최상위에 설정된 인증서로 서비스하도록 정책 변경
+-  :ref:`https-conf` - SNI(Server Name Indication) 필드가 없는 ClientHello에 대해 최상위에 설정된 인증서가 제공되도록 정책 변경
 
 
 .. _release-cdn-2-9-8:
