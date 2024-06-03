@@ -634,7 +634,7 @@ Origin 로그
 
 -  ``time-sock-creation (단위: ms)`` - 소켓 생성 소요시간
 -  ``x-cs-retry`` - 해당 세션 Retry 상태 (Retry 시 ``Y`` , Retry 하지 않았다면 ``N`` )
--  ``time-request`` - 원본서버 요청시간. ``시간:분:초.밀리세컨드 (hh:mm:ss.SSS)`` 양식. ( ``v2.7.35`` 부터 지원 )
+-  ``time-request`` - 원본서버 요청시간. ``시간:분:초.밀리세컨드 (hh:mm:ss.SSS)`` 양식( ``v2.7.35`` 부터 지원)
 -  ``cs-balance`` - 원본서버 선택이유
 
    -  ``rr`` :ref:`origin-balancemode` ``RoundRobin`` 설정
