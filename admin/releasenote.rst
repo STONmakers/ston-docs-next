@@ -8,7 +8,7 @@ v2.9.x
 
 .. _release-cdn-2-9-13:
 
-2.9.13 (2024.06.25) 
+2.9.13 (2024.06.27) 
 ----------------------------
 
 -  :ref:`caching-policy-post-method-caching` 시 :ref:`caching-policy-customttl` 이 반영되지 않던 증상 수정
