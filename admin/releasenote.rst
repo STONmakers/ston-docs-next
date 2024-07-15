@@ -11,7 +11,7 @@ v2.9.x
 2.9.15 (2024.07.16) 
 ----------------------------
 
--  :ref:`origin-balancemode` 의 ``Hash`` 맵 구성 성능 개선
+-  :ref:`origin-balancemode` ``Hash`` 맵 구성 성능 개선
 -  :ref:`media-hls` 비정상 MP4 예외처리 강화
 -  디스크 ``Quota`` 설정이 지정된 경우 잔여 공간정책보다 ``Quota`` 설정을 우선하도록 정책 변경
 -  ``Rocky Linux 9`` 지원
