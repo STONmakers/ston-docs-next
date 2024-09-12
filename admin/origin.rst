@@ -921,6 +921,23 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
    </Dynamic>
 
 
+.. warning::
+   
+   ``<Origin>`` 하위에 구성함을 주의한다. ::
+
+      # vhosts.xml
+
+      <Vhosts>
+         <Vhost Name="www.example.com">
+            <Origin>
+               <Dynamic Status="Active" KeepAlive="60">
+                  ...
+               </Dynamic>
+            </Origin>
+         </Vhost>
+      </Vhosts>
+   
+
 -  ``<Dynamic>``  
 
    -  ``Status (기본: Inactive)`` 값이 ``Active`` 인 경우 활성화된다. 서비스 중 변경이 가능하다.
