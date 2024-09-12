@@ -882,7 +882,7 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 동적 원본분기
 ====================================
 
-가상호스트는 :ref:`env-vhost-activeorigin` 을 대신하기에 1:1의 관계가 일반적이다.
+가상호스트는 :ref:`env-vhost-activeorigin` 를 대신하기에 1:1의 관계가 기본이다.
 가상호스트 안에는 원본팜이 존재하지만 1:1의 관계이기 때문에 특별한 이유가 없다면 표기하지 않는다.
 
    .. figure:: img/origin_dynamic01.png
@@ -893,15 +893,18 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 
 동적 원본분기는 클라이언트 요청 패턴에 따라 동적으로 원본팜을 생성하는 기능으로 다음과 같은 상황에서 효과적이다.
 
--  라이브 방송처럼 원본서버가 특정 이벤트동안만 운영될 때
--  원본서버 정보를 사전에 알 수 없을 때
--  단일 서비스 도메인으로 URL path로 원본이 구분될 때
--  수백 개가 넘는 가상호스트를 사전에 구성/분기 작업이 어려울 때
+.. note::
 
-   .. figure:: img/origin_dynamic02.png
-      :align: center
+   -  라이브 방송처럼 원본서버가 특정 이벤트동안만 운영될 때
+   -  원본서버 정보를 사전에 알 수 없을 때
+   -  단일 서비스 도메인으로 URL path로 원본이 구분될 때
+   -  수백 개가 넘는 가상호스트를 사전에 구성/분기 작업이 어려울 때
 
-      가상호스트가 멀티 원본팜을 운영한다.
+
+.. figure:: img/origin_dynamic02.png
+   :align: center
+
+   한 가상호스트 안에 독립된 원본팜을 멀티로 구성한다.
 
 ::
 
