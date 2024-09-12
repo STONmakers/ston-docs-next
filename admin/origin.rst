@@ -957,7 +957,7 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
       
       일치하는 패턴이 없다면 기존대로 지정된 :ref:`env-vhost-activeorigin` 를 사용한다. 
 
-   -  ``<Origin>`` 동적 원본에 기반 설정으로 ``<MatchingList>`` 에서 매칭된 키를 ``#ORGKEY`` 키워드로 사용할 수 있다.  ::
+   -  ``<Origin>`` 동적 원본의 설정으로 ``<MatchingList>`` 에서 매칭된 키를 ``#ORGKEY`` 키워드로 사용할 수 있다.  ::
           
           # /ko-kr/live/ch01/0000-0000-0001/test 요청시 원본 형상
           <Origin Protocol="HTTP">
@@ -972,8 +972,6 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 
 각각의 원본팜은 원본 사용정책 ``<OriginOptions>`` 는 공유하지만, 객체 ``<Origin>`` 는 완전히 독립된다.
 따라서 다음과 같이 독립적인 :ref:`origin-health-checker` 도 구성 가능하다. ::
-
-   ::
 
    # vhosts.xml - <Vhosts><Vhost><Origin>
 
