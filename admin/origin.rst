@@ -923,7 +923,7 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 
 .. warning::
    
-   ``<Origin>`` 하위에 구성함을 주의한다. ::
+   설정위치가 :ref:`env-vhost-activeorigin` ``<Origin>`` 하위임을 주의한다. ::
 
       # vhosts.xml
 
