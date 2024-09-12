@@ -872,3 +872,12 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 .. note::
 
    읽기 권한인 GET 메소드만을 지원한다. 쓰기(POST, PUT, FETCH)는 캐시서버의 목적에 부합하지 않는다.
+
+
+
+.. _origin_exclusion_dynamic:
+
+동적 원본분기
+====================================
+
+하하
