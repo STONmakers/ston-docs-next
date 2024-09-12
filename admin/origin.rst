@@ -951,4 +951,33 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 
 
 각각의 원본팜은 원본 사용정책 ``<OriginOptions>`` 는 공유하지만, 객체 ``<Origin>`` 는 완전히 독립된다.
-따라서 각 원본팜마다 IP 구성, :ref:`origin-session-reuse` , :ref:`origin_exclusion_and_recovery` , :ref:`origin-health-checker` 등이 독립적으로 동작한다.
+따라서 다음과 같이 독립적인 :ref:`origin-health-checker` 도 구성 가능하다. ::
+
+   ::
+
+   # vhosts.xml - <Vhosts><Vhost><Origin>
+
+   <Dynamic Status="Active" KeepAlive="60">
+      <MatchingList>
+         <Item><![CDATA[$URL[/ko-kr/live/*/*], #1]]></Item>
+         <Item><![CDATA[$URL[/*?ch=*&*], #2]]></Item>
+      </MatchingList>
+      <Origin Protocol="HTTP">
+         <Address>#ORGKEY.mylive.com</Address>
+         <Address2>#ORGKEY-backup.mylive.com</Address>
+         <HealthChecker ResCode="0" Timeout="10" Cycle="10" Exclusion="3" Recovery="5" Log="ON">/</HealthChecker> 
+         <HealthChecker ResCode="200, 404" Timeout="3" Cycle="5" Exclusion="5" Recovery="20" Log="ON">/alive.html</HealthChecker>
+      </Origin>
+   </Dynamic>
+
+
+각 원본팜마다 IP 구성, :ref:`origin-session-reuse` , :ref:`origin_exclusion_and_recovery` , :ref:`origin-health-checker` 등이 독립적으로 동작한다.
+
+.. note::
+
+   각 원본팜의 생성/파괴는 :ref:`admin-log-info` 에 기록된다. ::
+
+      2024-09-12 18:18:36 [foo.com] dynamic origin <ch01> created: <Origin Protocol="HTTP"><Address>cd01.mylive.com</Address><Address2>cd01-backup.mylive.com</Address><HealthChecker ResCode="0" Timeout="10" Cycle="10" Exclusion="3" Recovery="5" Log="ON">/</HealthChecker><HealthChecker ResCode="200, 404" Timeout="3" Cycle="5" Exclusion="5" Recovery="20" Log="ON">/alive.html</HealthChecker></Origin>
+      2024-09-12 18:48:36 [foo.com] dynamic origin <ch01> destroyed
+
+
