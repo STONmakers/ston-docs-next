@@ -260,11 +260,11 @@ TTL 우선순위
     # server.xml - <Server><VHostDefault><Options>
     # vhosts.xml - <Vhosts><Vhost><Options>
 
-    <TTL Priority="cc_nostore, cc_nocache, custom, cc_maxage, rescode, cc_maxage">
+    <TTL Priority="cc_nostore, cc_nocache, custom, cc_maxage, rescode, cc_smaxage">
         ... (생략) ...
     </TTL>
 
-``<TTL>`` 의 ``Priority (기본: cc_nocache, custom, cc_maxage, rescode)`` 속성으로 설정한다.
+``<TTL>`` 의 ``Priority (기본: cc_nostore, cc_nocache, custom, cc_maxage, rescode, cc_smaxage)`` 속성으로 설정한다.
 
 - ``cc_nostore`` 원본이 ``Cache-Control: no-store`` 로 응답한 경우
 - ``cc_nocache`` 원본이 ``Cache-Control: no-cache`` 로 응답한 경우
