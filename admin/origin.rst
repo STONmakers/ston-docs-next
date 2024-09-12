@@ -880,4 +880,4 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 동적 원본분기
 ====================================
 
-하하
+클라이언트 요청이 특정 패턴인 경우 
