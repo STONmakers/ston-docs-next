@@ -268,7 +268,7 @@ TTL 우선순위
 
 - ``cc_nostore`` 원본이 ``Cache-Control: no-store`` 로 응답한 경우
 - ``cc_nocache`` 원본이 ``Cache-Control: no-cache`` 로 응답한 경우
-- ``custom`` `caching-policy-customttl`
+- ``custom`` :ref:`caching-policy-customttl`
 - ``cc_maxage`` 원본이 ``Cache-Control에 {maxage}`` 를 명시한 경우
 - ``rescode`` 원본 응답코드별 기본 TTL
 - ``cc_smaxage`` 원본이 ``Cache-Control에 {s-maxage}`` 를 명시한 경우
