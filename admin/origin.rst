@@ -466,6 +466,8 @@ STON의 많은 기능은 기존 URL 뒤에 명령어를 붙이는 형식이다. 
    재시도하는 만큼 클라이언트 대기 시간이 지연되어 서비스 품질에 악영향을 줄 우려가 있음에 주의한다.
 
 
+.. _origin-session-reuse:
+
 세션 재사용
 ====================================
 
@@ -875,9 +877,78 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 
 
 
-.. _origin_exclusion_dynamic:
+.. _origin_dynamic:
 
 동적 원본분기
 ====================================
 
-클라이언트 요청이 특정 패턴인 경우 
+가상호스트는 :ref:`env-vhost-activeorigin` 을 대신하기에 1:1의 관계가 일반적이다.
+가상호스트 안에는 원본팜이 존재하지만 1:1의 관계이기 때문에 특별한 이유가 없다면 표기하지 않는다.
+
+   .. figure:: img/origin_dynamic01
+      :align: center
+
+      원본팜은 항상 존재한다.
+
+
+동적 원본분기는 클라이언트 요청 패턴에 따라 동적으로 원본팜을 생성하는 기능으로 다음과 같은 상황에서 효과적이다.
+
+-  라이브 방송처럼 원본서버가 특정 이벤트동안만 운영될 때
+-  원본서버 정보를 사전에 알 수 없을 때
+-  단일 서비스 도메인으로 URL path로 원본이 구분될 때
+-  수백 개가 넘는 가상호스트를 사전에 구성/분기 작업이 어려울 때
+
+   .. figure:: img/origin_dynamic02
+      :align: center
+
+      가상호스트가 멀티 원본팜을 운영한다.
+
+::
+
+   # vhosts.xml - <Vhosts><Vhost><Origin>
+
+   <Dynamic Status="Active" KeepAlive="60">
+      <MatchingList>
+         <Item><![CDATA[$URL[/ko-kr/live/*/*], #1]]></Item>
+         <Item><![CDATA[$URL[/*?ch=*&*], #2]]></Item>
+      </MatchingList>
+      <Origin Protocol="HTTP">
+         <Address>#ORGKEY.mylive.com</Address>
+      </Origin>
+   </Dynamic>
+
+
+-  ``<Dynamic>``  
+
+   -  ``Status (기본: Inactive)`` 값이 ``Active`` 인 경우 활성화된다. 서비스 중 변경이 가능하다.
+
+   -  ``KeepAlive (기본: 1800초, 최대: 86400초)`` 동적으로 생성된 원본팜이 이 시간동안 접근되지 않는다면 파괴한다.
+
+   -  ``<MatchingList>`` 동적 원본을 생성할 패턴을 하위 ``<Item>`` 으로 구성한다. ``<Item>`` 을 통해 동적 원본에서 사용할 키를 추출한다. ``#1 ~ #9`` 까지 사용이 가능하다. ::
+          
+          # /ko-kr/live/ch01/0000-0000-0001/test 요청시
+          패턴: /ko-kr/live/*/*
+          키: ch01 (#1)
+
+          # /9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d?ch=ston 요청시
+          패턴: /*?ch=*&*
+          키: ston (#2)
+          
+      
+      일치하는 패턴이 없다면 기존대로 지정된 :ref:`env-vhost-activeorigin` 를 사용한다. 
+
+   -  ``<Origin>`` 동적 원본에 기반 설정으로 ``<MatchingList>`` 에서 매칭된 키를 ``#ORGKEY`` 키워드로 사용할 수 있다.  ::
+          
+          # /ko-kr/live/ch01/0000-0000-0001/test 요청시 원본 형상
+          <Origin Protocol="HTTP">
+            <Address>ch01.mylive.com</Address>
+          </Origin>
+
+          # /9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d?ch=ston 요청시
+          <Origin Protocol="HTTP">
+            <Address>ston.mylive.com</Address>
+          </Origin>
+
+
+각각의 원본팜은 원본 사용정책 ``<OriginOptions>`` 는 공유하지만, 객체 ``<Origin>`` 는 완전히 독립된다.
+따라서 각 원본팜마다 IP 구성, :ref:`origin-session-reuse` , :ref:`origin_exclusion_and_recovery` , :ref:`origin-health-checker` 등이 독립적으로 동작한다.

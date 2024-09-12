@@ -11,7 +11,7 @@ v2.10.x
 2.10.2 (2024.09)
 ----------------------------
 
--  :ref:`origin_exclusion_dynamic` 기능 추가
+-  :ref:`origin_dynamic` 기능 추가
 -  원본 ``Cache-Control`` 헤더의 ``s-maxage`` 지시자 지원 ( :ref:`caching-policy-priority` 참고)
 -  :ref:`handling_http_requests_http_to_https` 기능 추가
 -  :ref:`admin-log-origin` 의 ``cs-acceptencoding`` 필드가 기록되지 않던 문제 수정
