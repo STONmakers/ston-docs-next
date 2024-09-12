@@ -885,7 +885,7 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 가상호스트는 :ref:`env-vhost-activeorigin` 을 대신하기에 1:1의 관계가 일반적이다.
 가상호스트 안에는 원본팜이 존재하지만 1:1의 관계이기 때문에 특별한 이유가 없다면 표기하지 않는다.
 
-   .. figure:: img/origin_dynamic01
+   .. figure:: img/origin_dynamic01.png
       :align: center
 
       원본팜은 항상 존재한다.
@@ -898,7 +898,7 @@ AWS S3 인증스펙인 `Authenticating Requests (AWS Signature Version 4) <https
 -  단일 서비스 도메인으로 URL path로 원본이 구분될 때
 -  수백 개가 넘는 가상호스트를 사전에 구성/분기 작업이 어려울 때
 
-   .. figure:: img/origin_dynamic02
+   .. figure:: img/origin_dynamic02.png
       :align: center
 
       가상호스트가 멀티 원본팜을 운영한다.
