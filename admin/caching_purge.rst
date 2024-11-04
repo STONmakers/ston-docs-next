@@ -341,7 +341,7 @@ POST 규격
 
 
 
-.. _caching-purge-async-register:
+.. _caching-purge-async-idbase:
 
 ``Id`` 체계와 응답
 -----------------------------------

@@ -12,6 +12,7 @@ v2.10.x
 ----------------------------
 
 -  :ref:`origin_dynamic` 에 대한 :ref:`monitoring_stats_vhost_origin` 지원
+-  :ref:`caching-purge-async` 기능을 :ref:`caching-purge-async-idbase` 으로 개선 및 :ref:`caching-purge-async-cancelreset` 보강
 
 
 
