@@ -341,9 +341,9 @@ POST 규격
 
 
 
-.. _caching-purge-async-management-api:
+.. _caching-purge-async-list-api:
 
-비동기 무효화 관리 API
+조회 API
 -----------------------------------
 
 비동기 무효화가 활성화되어 있다면 등록된 무효화 요청을 아래와 같이 조회할 수 있다.
@@ -429,3 +429,19 @@ POST 규격
    # 특정 가상호스트의 prectrl만 초기화한다.
    # 단, 비동기 무효화 항목은 삭제되지 않고 수행된다.
    http://127.0.0.1:10040/command/async/asynctrl/prectrl/reset?vhost=foo.com
+
+
+.. _caching-purge-async-list-reset:
+
+초기화 API
+-----------------------------------
+
+관리 API는 다음과 같다. ::
+
+   # 모든 비동기 무효화 정보를 초기화한다.
+   http://127.0.0.1:10040/command/async/asynctrl/reset
+
+   # 특정 가상호스트의 prectrl만 초기화한다.
+   # 단, 비동기 무효화 항목은 삭제되지 않고 수행된다.
+   http://127.0.0.1:10040/command/async/asynctrl/prectrl/reset?vhost=foo.com
+
