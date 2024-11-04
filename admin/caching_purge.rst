@@ -341,12 +341,66 @@ POST 규격
 
 
 
-.. _caching-purge-async-list-api:
+.. _caching-purge-async-register:
 
-조회 API
+``Id`` 체계와 응답
 -----------------------------------
 
-비동기 무효화가 활성화되어 있다면 등록된 무효화 요청을 아래와 같이 조회할 수 있다.
+API를 통해 비동기 무효화가 등록되면 고유한 ``Id`` 가 자동 발급된다. ::
+
+   {
+     "version": "2.10.3",
+     "method": "async/purge",
+     "status": "OK",
+     "result": { "Count": 0, "Size": 0, "Time": 4, "Id": "20241022114432345", "Merge": "N" }
+   }
+
+``Id`` 는 ``YYYY:MM:DD hh:mm:ss.SSS`` 형식으로 발급되며 충돌이 발생할 경우 문자열 끝에 ``_{n}`` 을 순차적으로 추가한다.
+
+``Id`` 를 임의로 지정하여 호출이 가능하다. ::
+
+   # my_sample_id로 Id를 명시적 지정
+   /command/async/purge?id=my_sample_id&url=foo.com/*
+
+   # 응답
+   {
+     "version": "22.2.0",
+     "method": "async/purge",
+     "status": "OK",
+     "result": { "Count": 0, "Size": 0, "Time": 4, "Id": "my_sample_id", "Merge": "N" }
+  }
+
+
+에러 상황시 응답코드로 구분한다.
+
+================================= ==================================================
+응답코드                            설명
+================================= ==================================================
+``400 Bad Request``               쿼리스트링 URL 이 없음
+``503 Service Unavailable``       비동기 무효화 삽입 실패
+``409 Conflict``                  중복 ID 생성 시도
+================================= ==================================================
+
+
+
+
+.. _caching-purge-async-info:
+
+``<PreCacheControl>`` 조회 API
+-----------------------------------
+
+비동기 무효화가 활성화되어 있다면 등록된 무효화 요청이 수행되기 전 동작하는 ``<PreCacheControl>`` 에 등록된 아이템들을 조회할 수 있다.
+
+::
+
+
+
+.. _caching-purge-async-list:
+
+``<PreCacheControl>`` 조회 API
+-----------------------------------
+
+비동기 무효화가 활성화되어 있다면 등록된 무효화 요청이 수행되기 전 동작하는 ``<PreCacheControl>`` 에 등록된 아이템들을 조회할 수 있다.
 
 ::
 
@@ -389,16 +443,19 @@ POST 규격
                "max": 1024,
                "list": [
                   {
+                     "id": "20230113085834",
                      "command": "purge",
                      "timestamp": "2023-01-13T08:58:34Z",
                      "url": "/*.jpg"
                   },
                   {
+                     "id": "20230113085835",
                      "command": "purge",
                      "timestamp": "2023-01-13T08:58:35Z",
                      "url": "/*.bmp"
                   },
                   {
+                     "id": "20230113085836",
                      "command": "purge",
                      "timestamp": "2023-01-13T08:58:36Z",
                      "url": "/*"
@@ -431,7 +488,8 @@ POST 규격
    http://127.0.0.1:10040/command/async/asynctrl/prectrl/reset?vhost=foo.com
 
 
-.. _caching-purge-async-list-reset:
+
+.. _caching-purge-async-reset:
 
 초기화 API
 -----------------------------------
