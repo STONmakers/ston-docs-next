@@ -138,6 +138,7 @@ HTTP Validation 지원
 
 
 -  ``Validate (기본: OFF)``
+
    설정이 ``ON`` 일 경우 HTTP Validation 메커니즘( ``If-Modified-Since`` , ``If-None-Match`` ) 헤더를 추가한다. 
    반드시 유효 응답코드에 304를 추가해야 한다. ::
 
@@ -165,40 +166,6 @@ HTTP Validation 지원
    
    -  ``unchanged`` 이전 값과 동일할때만 ``Healthy`` 로 판단한다.
 
-
-
-.. _origin-health-checker-client:
-
-응답헤더 변화감지
---------------------------------
-
-원본서버의 특정 응답헤더 값을 추적하며 ``Healthy`` 여부를 판단한다. ::
-
-   # vhosts.xml - <Vhosts><Vhost><Origin>
-
-   <HealthChecker 
-      ...
-      Validate="OFF"
-      HealthyHeader="My-Custom-Header"
-      HealthyWhen="changed 또는 unchanged">
-      /
-   </HealthChecker>
-
-
-Validate (기본: OFF)
-ON일 경우 HTTP Validation 메커니즘(If-Modified-Since, If-None-Match)을 지원한다. 유효 응답코드에 304를 추가해야 한다, 
-
-
-
-<HealthChecker ResCode="200, 304" Validate="ON>/</HealthChecker>
-HealthyHeader
-원본서버의 특정 응답헤더의 값을 기억하여 Healthy를 판단한다.
-
-HealthyWhen (기본: changed)
-
-changed (기본) 이전 값에서 변경되었을 때만 Healthy로 판단한다.
-
-unchanged 이전 값과 동일할때만 Healthy로 판단한다.
 
 
 .. _origin-use-policy:
