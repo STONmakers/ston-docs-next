@@ -700,8 +700,8 @@ XML 개별 설정 압축파일을 HTTP Post방식(Multipart와 SOAP 방식 모�
 가상호스트 설정 API
 ====================================
 
-``vhosts.xml`` 형상 단위가 아닌 개별 가상호스트 단위의 CRUD(생성, 읽기, 갱신, 삭제)를 지원한다.
-API를 통해 ``vhosts.xml`` 를 변경하고, 이후 :ref:`api-conf-reload` 시나리오로 동작한다.
+``vhosts.xml`` 형상 단위가 아닌 개별 가상호스트 단위의 CRUD(생성, 읽기, 변경, 삭제)를 지원한다.
+API를 통해 ``vhosts.xml`` 를 변경하고, 이후 :ref:`api-conf-reload` 시나리오로 동작하기에 재가동시에도 형상은 유지된다.
 
 
 .. _api-conf-vhostapi-create:
@@ -738,10 +738,10 @@ API를 통해 ``vhosts.xml`` 를 변경하고, 이후 :ref:`api-conf-reload` 시
 정상적으로 추가된 경우 다음과 같이 ``200 OK`` 로 응답한다. ::
 
     {
-    "version": "2.11.0",
-    "method": "/conf/vhosts/create",
-    "status": "OK",
-    "result": "created"
+        "version": "2.11.0",
+        "method": "/conf/vhosts/create",
+        "status": "OK",
+        "result": "created"
     }
 
 
@@ -781,21 +781,21 @@ API를 통해 ``vhosts.xml`` 를 변경하고, 이후 :ref:`api-conf-reload` 시
             </MatchingList>
         </Vhost>
 
-    ``Target`` 값은 물리적인 ``.txt`` 파일명과 같으며, 다음과 같다.
+   ``Target`` 값은 물리적인 ``.txt`` 파일명과 같으며, 다음과 같다.
 
-    ===================== ===========================================================================
-    ``Target``             설명
-    ===================== ===========================================================================
-    ``acl``                :ref:`가상호스트 접근제어목록 <access-control-vhost_allow_deny>`
-    ``bypass``             :ref:`바이패스 예외목록 <bypass-getpost>`
-    ``compression``        :ref:`압축 대상목록 <handling_http_requests_compression>`
-    ``expires``            :ref:`Expire헤더 예외목록 <handling_http_requests_cache_control_expires>`
-    ``headers``            :ref:`헤더 변조목록 <handling_http_requests_modify_client>`
-    ``postbody``           :ref:`POST 캐싱목록 <caching-policy-post-method-caching>`
-    ``querystring``        :ref:`쿼리스트링 예외목록 <caching-policy-applyquerystring>`
-    ``throttling``         :ref:`대역폭조절 목록 <bandwidth-control-bt-list>`
-    ``ttl``                :ref:`커스텀 TTL목록 <caching-policy-customttl>`
-    ===================== ============================================
+   ===================== ===========================================================================
+   ``Target``             설명
+   ===================== ===========================================================================
+   ``acl``                :ref:`가상호스트 접근제어목록 <access-control-vhost_allow_deny>`
+   ``bypass``             :ref:`바이패스 예외목록 <bypass-getpost>`
+   ``compression``        :ref:`압축 대상목록 <handling_http_requests_compression>`
+   ``expires``            :ref:`Expire헤더 예외목록 <handling_http_requests_cache_control_expires>`
+   ``headers``            :ref:`헤더 변조목록 <handling_http_requests_modify_client>`
+   ``postbody``           :ref:`POST 캐싱목록 <caching-policy-post-method-caching>`
+   ``querystring``        :ref:`쿼리스트링 예외목록 <caching-policy-applyquerystring>`
+   ``throttling``         :ref:`대역폭조절 목록 <bandwidth-control-bt-list>`
+   ``ttl``                :ref:`커스텀 TTL목록 <caching-policy-customttl>`
+   ===================== ============================================
 
 
 
@@ -852,10 +852,10 @@ API를 통해 ``vhosts.xml`` 를 변경하고, 이후 :ref:`api-conf-reload` 시
     Content-Type: application/xml
 
     <Vhost Name="example.com" Status="Active" Volatile="OFF" Instant="OFF">
-    <Origin ByClient="OFF" Protocol="HTTP">
-        <Address>192.168.0.101</Address>
-    </Origin>
-    <Listen>*:80</Listen>
+        <Origin ByClient="OFF" Protocol="HTTP">
+            <Address>192.168.0.101</Address>
+        </Origin>
+        <Listen>*:80</Listen>
     </Vhost>
 
 
