@@ -321,24 +321,40 @@ System 통계
 
     "System":                                   <System>
     {                                             <CPU
-      "CPU":                                          Kernel="689"
-      {                                               User="1316"
-        "Kernel":689,                                 Idle="7993"
-        "User":1316,                                  ProcKernel="570"
-        "Idle":7993,                                  ProcUser="1216"
-        "ProcKernel":570,                             Nice="0"
-        "ProcUser":1216,                              IOWait="52"
-        "Nice":0,                                     IRQ="10"
-        "IOWait":52,                                  SoftIRQ="12"
-        "IRQ":10,                                     Steal="0" />
-        "SoftIRQ":12,                             <Mem Free="5914644" STON="9785800"/>
-        "Steal":0                                 <Storage>
-      },                                            <Disk
-      "Mem":                                        	Path="/cache1"
-      {                                             	Status="Normal"
-        "Free":5914644,                             	Read="23"
-        "STON":9785800                              	ReadMerged="0"
-      },                                            	ReadSectors="344"
+      "CPU":                                        Kernel="689"
+      {                                             User="1316"
+        "Kernel":689,                               Idle="7993"
+        "User":1316,                                ProcKernel="570"
+        "Idle":7993,                                ProcUser="1216"
+        "ProcKernel":570,                           Nice="0"
+        "ProcUser":1216,                            IOWait="52"
+        "Nice":0,                                   IRQ="10"
+        "IOWait":52,                                SoftIRQ="12"
+        "IRQ":10,                                   Steal="0" />
+        "SoftIRQ":12,                             <Mem 
+        "Steal":0                                   Total="8106168" 
+      },                                            Free="5914644"
+      "Mem":                                        STON="9785800" />
+      {                                           <ProcessMemory 
+        "Total": 1048576,                           Peak="355300" 
+        "Free":5914644,                             Size="355296" 
+        "STON":9785800                              Rss="355296">
+      },                                            <Contents 
+      "ProcessMemory":                                Limit="1740170" 
+      {                                               Using="0" 
+        "Peak": 1024,                                 OverUsing="0" 
+        "Size": 512,                                  SecureRatio="10" 
+        "Rss": 256,                                   SecureSize="174017" />
+        "Contents":                               </ProcessMemory>
+        {                                         <MaxFileCount>1979927</MaxFileCount>
+          "Limit": 1024,                          
+          "Using": 128,                           <Storage>  
+          "OverUsing": 0,                           <Disk  
+          "SecureRatio": 10,                          Path="/cache1"
+          "SecureSize": 102                           Status="Normal"
+        }                                             Read="23"
+      },                                              ReadMerged="0"
+      "MaxFileCount": 10000,                          ReadSectors="344"
       "Storage":                                    	ReadTime="117"
       {                                             	Write="24"
         "Disk":                                     	WriteMerged="93"
@@ -425,8 +441,24 @@ System 통계
 
 -  ``Mem (단위: Bytes)`` 메모리 사용량
 
+   - ``Total`` 시스템 물리 메모리 크기
    - ``Free`` 시스템 Free 메모리 크기
    - ``STON`` STON이 사용하는 메모리 크기
+
+-  ``ProcessMemory`` 프로세스 메모리 정보
+
+   - ``Peak`` STON Peak 메모리 크기
+   - ``Size`` STON 가용 메모리 크기
+   - ``Rss`` STON RSS 메모리 크기
+
+- ``Contents`` 콘텐츠 정보
+
+   - ``Limit`` 임계 콘텐츠 메모리 크기
+   - ``Using`` 사용 중인 콘텐츠 메모리 크기
+   - ``OverUsing`` 초과 사용 중인 콘텐츠 메모리 크기
+   - ``SecureRatio`` 콘텐츠 메모리 정리 비율
+   - ``SecureSize`` 콘텐츠 메모리 정리 용량
+   - ``MaxFileCount`` 캐싱 최대 인덱싱 개수
 
 -  ``Disk`` 디스크 성능지표
 
