@@ -413,7 +413,9 @@ STON에서는 다음과 같이 Listen속성에 IP를 명시하여 인증서를 �
 
    # server.xml - <Server>
 
-   <Https TLS1.2="ON" TLS1.1="ON" TLS1.0="ON" SSL3.0="ON"> ...  </Https>
+   <Https TLS1.3="ON" TLS1.2="ON" TLS1.1="ON" TLS1.0="ON" SSL3.0="ON"> ...  </Https>
+
+- ``TLS1.3 (기본: ON)`` TLS1.3을 사용한다.
 
 - ``TLS1.2 (기본: ON)`` TLS1.2를 사용한다.
 
