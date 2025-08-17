@@ -12,7 +12,7 @@ v2.12.x
 ----------------------------
 
 -  :ref:`origin_dynamic` 쿼리 스트링도 패턴으로 인식하도록 개선
--  비동기 purge 성능 개선
+-  :ref:`caching-purge-async` 성능 개선. 동시처리 설정 지원
 
 
 .. _release-cdn-2-12-1:
