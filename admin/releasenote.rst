@@ -8,7 +8,7 @@ v2.12.x
 
 .. _release-cdn-2-12-11:
 
-2.12.11 (2026.01.21)
+2.12.11 (2026.02.05)
 ----------------------------
 
 -  :ref:`handling_http_requests_header_contentfreshness` 개선 - 클라이언트가 보낸 ``ETag`` 따옴표를 무시하는 ``IgnoreEtagQuotes`` 기능 추가
